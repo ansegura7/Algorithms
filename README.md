@@ -4,7 +4,7 @@
 Repository with the implementation (in Python) and description of various computational and statistical algorithms.
 
 ## Algorithms 
-- <a href="https://ansegura7.github.io/Algorithms/monte-carlo-simulation/MonteCarloSimulation.html" target="_blank" >Monte-Carlo Simulations</a>
+- <a href="https://ansegura7.github.io/Algorithms/monte-carlo-simulation/MonteCarloSimulation.html" target="_blank" >Monte-Carlo Simulation</a>
 
 ## Python Libraries
 - conda install -c anaconda numpy
