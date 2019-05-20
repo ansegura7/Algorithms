@@ -5,6 +5,7 @@ Repository with the implementation (in Python) and description of various comput
 
 ## Algorithms 
 - <a href="https://ansegura7.github.io/Algorithms/monte-carlo-simulation/MonteCarloSimulation.html" target="_blank" >Monte-Carlo Simulation</a>
+- <a href="https://ansegura7.github.io/Algorithms/chaotic-systems/ChaoticSystems.html" target="_blank" >Chaotic Systems</a>
 
 ## Python Libraries
 - conda install -c anaconda numpy
