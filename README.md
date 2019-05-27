@@ -1,6 +1,4 @@
 # Algorithms - Python
-
-## Abstract
 Repository with the implementation (in Python) and description of various computational and statistical algorithms.
 
 ## Algorithms 
@@ -9,8 +7,17 @@ Repository with the implementation (in Python) and description of various comput
 - <a href="https://ansegura7.github.io/Algorithms/similarity-functions/SimilarityFunctions.html" target="_blank" >Similarity Functions</a>
 
 ## Python Libraries
-- conda install -c anaconda numpy
-- conda install -c anaconda pymc
+```
+  conda install -c anaconda numpy
+  conda install -c anaconda pymc
+```
 
-## License Type
+## Contributing and Feedback
+Any kind of feedback/criticism would be greatly appreciated (algorithm design, documentation, improvement ideas, spelling mistakes, etc...).
+
+## Authors
+- Created by Andrés Segura Tinoco
+- Created on May 17, 2019
+
+## License
 This project is licensed under the terms of the MIT license.
