@@ -6,7 +6,7 @@ Repository with the implementation (in Python) and description of various comput
 - <a href="https://ansegura7.github.io/Algorithms/chaotic-systems/ChaoticSystems.html" target="_blank" >Chaotic Systems</a>
 - <a href="https://ansegura7.github.io/Algorithms/similarity-functions/SimilarityFunctions.html" target="_blank" >Similarity Functions</a>
 
-## Python Libraries
+## Python Dependencies
 ```
   conda install -c anaconda numpy
   conda install -c anaconda pymc
