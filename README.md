@@ -1,10 +1,10 @@
 # Algorithms - Python
-Repository with the implementation (in Python) and description of various computational and statistical algorithms.
+Repository with the implementation (in Python) and description of several computational, mathematical and statistical algorithms.
 
 ## Algorithms 
 - <a href="https://ansegura7.github.io/Algorithms/monte-carlo-simulation/MonteCarloSimulation.html" target="_blank" >Monte-Carlo Simulation</a>
-- <a href="https://ansegura7.github.io/Algorithms/chaotic-systems/ChaoticSystems.html" target="_blank" >Chaotic Systems</a>
 - <a href="https://ansegura7.github.io/Algorithms/similarity-functions/SimilarityFunctions.html" target="_blank" >Similarity Functions</a>
+- <a href="https://ansegura7.github.io/Algorithms/chaotic-systems/ChaoticSystems.html" target="_blank" >Chaotic Systems</a>
 - <a href="https://ansegura7.github.io/Algorithms/cellular-automata/CellularAutomata.html" target="_blank" >Cellular Automata</a>
 
 ## Python Dependencies

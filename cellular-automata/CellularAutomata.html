@@ -13664,7 +13664,7 @@ div#notebook {
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Apply Linear Cellular Automata rule to current automaton</span>
-<span class="k">def</span> <span class="nf">apply_lca_rule</span><span class="p">(</span><span class="n">automaton</span><span class="p">,</span> <span class="n">rule</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">forward</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">apply_rlca_rule</span><span class="p">(</span><span class="n">automaton</span><span class="p">,</span> <span class="n">rule</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">forward</span><span class="p">):</span>
     <span class="n">n_cell</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">automaton</span><span class="p">)</span>
     <span class="n">new_automaton</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="n">curr_bit_string</span> <span class="o">=</span> <span class="p">(</span><span class="n">automaton</span> <span class="o">+</span> <span class="s1">&#39;.&#39;</span><span class="p">)[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
@@ -13705,7 +13705,7 @@ div#notebook {
     <span class="k">for</span> <span class="n">g</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">max_gen</span><span class="p">):</span>
         <span class="n">automaton</span> <span class="o">=</span> <span class="n">universe</span><span class="p">[</span><span class="n">g</span><span class="p">]</span>
         <span class="n">automaton_bits</span> <span class="o">=</span> <span class="n">byte_list_to_bit_string</span><span class="p">(</span><span class="n">automaton</span><span class="p">)</span>
-        <span class="n">new_automaton</span> <span class="o">=</span> <span class="n">apply_lca_rule</span><span class="p">(</span><span class="n">automaton_bits</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">forward</span><span class="p">)</span>
+        <span class="n">new_automaton</span> <span class="o">=</span> <span class="n">apply_rlca_rule</span><span class="p">(</span><span class="n">automaton_bits</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">forward</span><span class="p">)</span>
         <span class="n">universe</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">new_automaton</span><span class="p">)</span>
     
     <span class="k">return</span> <span class="n">universe</span>
@@ -13743,7 +13743,7 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[21]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Totalistic Rule: bin(19) = 0001110</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Totalistic Rule: bin(14) = 0001110</span>
 <span class="n">key</span> <span class="o">=</span> <span class="n">create_rlca_rule</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="n">r</span><span class="p">)</span>
 <span class="n">key</span>
 </pre></div>
