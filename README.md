@@ -3,10 +3,10 @@ Repository with the implementation (in Python) and description of several comput
 
 ## Algorithms
 <details open>
-<summary>1. <a href="https://ansegura7.github.io/Algorithms/monte-carlo-simulation/MonteCarloSimulation.html" target="_blank" >Monte-Carlo Simulation</a></summary>
+<summary>1. <a href="https://ansegura7.github.io/Algorithms/probabilistic-algorithms/ProbabilisticAlgorithms.html" target="_blank" >Probabilistic Algorithms</a></summary>
 <ul>
 	<li>Generator of pseudo-random numbers</li>
-	<li>The relevance of the distribution type</li>
+	<li>Monte-Carlo Simulation</li>
 	<li>Metropolis-Hastings algorithm</li>
 </ul>
 </details>
