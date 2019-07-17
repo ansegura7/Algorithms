@@ -5,10 +5,11 @@ Repository with the implementation (in Python) and description of several comput
 <details open>
 <summary>1. <a href="https://ansegura7.github.io/Algorithms/probabilistic-algorithms/ProbabilisticAlgorithms.html" target="_blank" >Probabilistic Algorithms</a></summary>
 <ul>
-	<li>Generator of pseudo-random numbers</li>
+	<li>Pseudo-Random Numbers Generator</li>
 	<li>Primality Test</li>
 	<li>Monte-Carlo Simulation</li>
-	<li>Metropolis-Hastings algorithm</li>
+	<li>Metropolis-Hastings Algorithm</li>
+	<li>Las Vegas Algorithm</li>
 </ul>
 </details>
 <details>
