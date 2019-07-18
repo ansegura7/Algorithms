@@ -10,6 +10,7 @@ Repository with the implementation (in Python) and description of several comput
 	<li>Monte Carlo Simulation</li>
 	<li>Metropolis-Hastings Algorithm</li>
 	<li>Las Vegas Algorithm</li>
+	<li>Law of Large Numbers</li>
 </ul>
 </details>
 <details>
