@@ -36,7 +36,7 @@ Repository with the implementation (in Python) and description of several comput
 </details>
 
 ## Python Dependencies
-```
+``` console
   conda install -c anaconda numpy
   conda install -c anaconda pymc
 ```
