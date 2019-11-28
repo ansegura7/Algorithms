@@ -34,6 +34,14 @@ Repository with the implementation (in Python) and description of several comput
 	<li>Reversible Linear Cellular Automata (RLCA)</li>
 </ul>
 </details>
+<details>
+<summary>5. <a href="https://ansegura7.github.io/Algorithms/graphs/Graphs.html" target="_blank" >Graphs</a></summary>
+<ul>
+	<li>Simple Graph (SG)</li>
+	<li>Directed Weighted Graph (DWG)</li>
+	<li>Shortest Path</li>
+</ul>
+</details>
 
 ## Python Dependencies
 ``` console
