@@ -39,7 +39,7 @@ Repository with the implementation (in Python) and description of several comput
 <ul>
 	<li>Simple Graph (SG)</li>
 	<li>Directed Weighted Graph (DWG)</li>
-	<li>Shortest Path</li>
+	<li>Dijkstra Algorithm</li>
 </ul>
 </details>
 
