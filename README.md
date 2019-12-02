@@ -45,8 +45,9 @@ Repository with the implementation (in Python) and description of several comput
 
 ## Python Dependencies
 ``` console
-  conda install -c anaconda numpy
-  conda install -c anaconda pymc
+	conda install -c anaconda numpy
+	conda install -c anaconda pymc
+	conda install -c anaconda networkx
 ```
 
 ## Contributing and Feedback
