@@ -37,7 +37,8 @@ Repository with the implementation (in Python) and description of several comput
 <details>
 <summary>5. <a href="https://ansegura7.github.io/Algorithms/graphs/Graphs.html" target="_blank" >Graphs</a></summary>
 <ul>
-	<li>Simple Graph (SG)</li>
+	<li>Graph or Undirected Simple Graph (USG)</li>
+	<li>Minimum Spanning Tree (MST)</li>
 	<li>Directed Weighted Graph (DWG)</li>
 	<li>Dijkstra Algorithm</li>
 </ul>
