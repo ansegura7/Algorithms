@@ -40,7 +40,7 @@ Repository with the implementation (in Python) and description of several comput
 	<li>Graph or Undirected Simple Graph</li>
 	<li>Minimum Spanning Tree of an Undirected Weighted Graph</li>
 	<li>Shortest Path of a Directed Weighted Graph</li>
-	<li>Floyd-Warshall algorithm</li>
+	<li>All-Pairs Shortest Path</li>
 </ul>
 </details>
 
