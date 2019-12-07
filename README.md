@@ -18,7 +18,7 @@ Repository with the implementation (in Python) and description of several comput
 <ul>
 	<li>Graph or Undirected Simple Graph</li>
 	<li>Minimum Spanning Tree of an Undirected Weighted Graph</li>
-	<li>Eulerian Circuit</li>
+	<li>Eulerian Circuit and Path</li>
 	<li>Shortest Path of a Directed Weighted Graph</li>
 	<li>All-Pairs Shortest Path</li>
 </ul>
