@@ -17,6 +17,7 @@ Repository with the implementation (in Python) and description of several comput
 <summary>2. <a href="https://ansegura7.github.io/Algorithms/graphs/Graphs.html" target="_blank" >Graphs</a></summary>
 <ul>
 	<li>Graph or Undirected Simple Graph</li>
+	<li>Graph Traversal</li>
 	<li>Minimum Spanning Tree of an Undirected Weighted Graph</li>
 	<li>Eulerian Circuit and Path</li>
 	<li>Shortest Path of a Directed Weighted Graph</li>
