@@ -22,6 +22,7 @@ Repository with the implementation (in Python) and description of several comput
 	<li>Eulerian Circuit and Path</li>
 	<li>Shortest Path of a Directed Weighted Graph</li>
 	<li>All-Pairs Shortest Path</li>
+	<li>Graph Coloring</li>
 </ul>
 </details>
 <details>
