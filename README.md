@@ -28,8 +28,8 @@ Repository with the implementation (in Python) and description of several comput
 <details>
 <summary>3. <a href="https://ansegura7.github.io/Algorithms/similarity-functions/SimilarityFunctions.html" target="_blank" >Similarity Functions</a></summary>
 <ul>
-	<li>Main similarity functions</li>
-	<li>Manual examples</li>
+	<li>Common Similarity functions</li>
+	<li>Examples from Scratch</li>
 	<li>Sklearn examples</li>
 </ul>
 </details>
