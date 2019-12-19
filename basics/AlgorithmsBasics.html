@@ -13219,7 +13219,7 @@ div#notebook {
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>4000000
-&gt;&gt; elapsed time 1273.1498 ms
+&gt;&gt; elapsed time 1399.0034 ms
 </pre>
 </div>
 </div>
@@ -13281,7 +13281,7 @@ div#notebook {
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>4000000
-&gt;&gt; elapsed time 0.9395999999999294 ms
+&gt;&gt; elapsed time 1.0731999999999964 ms
 </pre>
 </div>
 </div>
@@ -13361,7 +13361,7 @@ div#notebook {
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>9227465
-&gt;&gt; elapsed time 4534.183000000001 ms
+&gt;&gt; elapsed time 5284.3485 ms
 </pre>
 </div>
 </div>
@@ -13423,7 +13423,7 @@ div#notebook {
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>9227465
-&gt;&gt; elapsed time 1.0305999999999926 ms
+&gt;&gt; elapsed time 0.7811000000002011 ms
 </pre>
 </div>
 </div>
@@ -13488,7 +13488,106 @@ $$ f_{n} = {\frac{1}{\sqrt{5}}}{[\phi^n -(-\phi)^{-n}]} \tag{1}, $$$$ \phi = (1 
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>9227465
-&gt;&gt; elapsed time 0.9018000000002857 ms
+&gt;&gt; elapsed time 0.9683999999996473 ms
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Integer-Factorization">Integer Factorization<a class="anchor-link" href="#Integer-Factorization">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Example values</span>
+<span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">104723</span><span class="p">,</span> <span class="mi">104729</span>
+<span class="n">n</span> <span class="o">=</span> <span class="n">a</span> <span class="o">*</span> <span class="n">b</span>
+<span class="n">n</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[14]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>10967535067</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">fact_int</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">m</span> <span class="o">=</span> <span class="mi">2</span>
+    <span class="n">nn</span> <span class="o">=</span> <span class="n">n</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+    
+    <span class="k">while</span> <span class="n">m</span> <span class="o">&lt;</span> <span class="n">nn</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">n</span> <span class="o">%</span> <span class="n">m</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">n</span> <span class="o">//</span> <span class="n">m</span><span class="p">)</span>
+        <span class="n">m</span> <span class="o">+=</span> <span class="mi">1</span>
+    
+    <span class="k">return</span> <span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">start_time</span> <span class="o">=</span> <span class="n">timeit</span><span class="o">.</span><span class="n">default_timer</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">fact_int</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&gt;&gt; elapsed time&#39;</span><span class="p">,</span> <span class="p">(</span><span class="n">timeit</span><span class="o">.</span><span class="n">default_timer</span><span class="p">()</span> <span class="o">-</span> <span class="n">start_time</span><span class="p">)</span> <span class="o">*</span> <span class="mi">1000</span><span class="p">,</span> <span class="s1">&#39;ms&#39;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>(104723, 104729)
+&gt;&gt; elapsed time 35.102600000000095 ms
 </pre>
 </div>
 </div>
