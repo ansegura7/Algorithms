@@ -2,6 +2,8 @@
 Repository with the implementation (in Python) and description of several computational, mathematical and statistical algorithms.
 
 ## Algorithms
+In mathematics and computer science, an algorithm is a finite sequence of well-defined, computer-implementable instructions, typically to solve a class of problems or to perform a computation.
+
 <details open>
 <summary>1. <a href="https://ansegura7.github.io/Algorithms/basics/AlgorithmsBasics.html" target="_blank" >Algorithm's Basics</a></summary>
 <ul>
