@@ -10,6 +10,7 @@ In mathematics and computer science, an algorithm is a finite sequence of well-d
 	<li>Greatest Common Divisor</li>
 	<li>Fibonacci Serie</li>
 	<li>Integer Factorization</li>
+	<li>Tower of Hanoi</li>
 	<li>Changing Distribution</li>
 </ul>
 </details>
