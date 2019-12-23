@@ -61,9 +61,9 @@ In mathematics and computer science, an algorithm is a finite sequence of well-d
 
 ## Python Dependencies
 ``` console
-	conda install -c anaconda numpy
-	conda install -c anaconda pymc
-	conda install -c anaconda networkx
+  conda install -c anaconda numpy
+  conda install -c anaconda pymc
+  conda install -c anaconda networkx
 ```
 
 ## Contributing and Feedback
