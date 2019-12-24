@@ -13237,7 +13237,7 @@ div#notebook {
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>4000000
-&gt;&gt; elapsed time 1122.0183000000002 ms
+&gt;&gt; elapsed time 1532.1173 ms
 </pre>
 </div>
 </div>
@@ -13300,7 +13300,7 @@ div#notebook {
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>4000000
-&gt;&gt; elapsed time 2.458999999999989 ms
+&gt;&gt; elapsed time 1.38780000000005 ms
 </pre>
 </div>
 </div>
@@ -13381,7 +13381,7 @@ div#notebook {
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>9227465
-&gt;&gt; elapsed time 6616.6331 ms
+&gt;&gt; elapsed time 11510.7513 ms
 </pre>
 </div>
 </div>
@@ -13444,7 +13444,7 @@ div#notebook {
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>9227465
-&gt;&gt; elapsed time 1.0494999999997034 ms
+&gt;&gt; elapsed time 0.33950000000082525 ms
 </pre>
 </div>
 </div>
@@ -13510,7 +13510,7 @@ $$ f_{n} = {\frac{1}{\sqrt{5}}}{[\phi^n -(-\phi)^{-n}]} \tag{1}, $$$$ \phi = (1 
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>9227465
-&gt;&gt; elapsed time 0.36670000000071923 ms
+&gt;&gt; elapsed time 0.4171999999993403 ms
 </pre>
 </div>
 </div>
@@ -13610,7 +13610,7 @@ $$ f_{n} = {\frac{1}{\sqrt{5}}}{[\phi^n -(-\phi)^{-n}]} \tag{1}, $$$$ \phi = (1 
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>(104723, 104729)
-&gt;&gt; elapsed time 34.73229999999994 ms
+&gt;&gt; elapsed time 51.8452000000007 ms
 </pre>
 </div>
 </div>
@@ -13667,7 +13667,7 @@ $$ f_{n} = {\frac{1}{\sqrt{5}}}{[\phi^n -(-\phi)^{-n}]} \tag{1}, $$$$ \phi = (1 
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>(104723, 104729)
-&gt;&gt; elapsed time 1.3318999999984982 ms
+&gt;&gt; elapsed time 0.3373999999993771 ms
 </pre>
 </div>
 </div>
@@ -13690,10 +13690,7 @@ $$ f_{n} = {\frac{1}{\sqrt{5}}}{[\phi^n -(-\phi)^{-n}]} \tag{1}, $$$$ \phi = (1 
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Move n disk from source to destination</span>
 <span class="k">def</span> <span class="nf">hanoi_rec</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">source</span><span class="p">,</span> <span class="n">inter</span><span class="p">,</span> <span class="n">dest</span><span class="p">):</span>
-    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Move from:&#39;</span><span class="p">,</span> <span class="n">source</span><span class="p">,</span> <span class="s1">&#39;, to:&#39;</span><span class="p">,</span> <span class="n">dest</span><span class="p">)</span>
-        <span class="k">return</span>
-    <span class="k">else</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
         <span class="n">hanoi_rec</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">source</span><span class="p">,</span> <span class="n">dest</span><span class="p">,</span> <span class="n">inter</span><span class="p">)</span>
         <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Move from:&#39;</span><span class="p">,</span> <span class="n">source</span><span class="p">,</span> <span class="s1">&#39;, to:&#39;</span><span class="p">,</span> <span class="n">dest</span><span class="p">)</span>
         <span class="n">hanoi_rec</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">inter</span><span class="p">,</span> <span class="n">source</span><span class="p">,</span> <span class="n">dest</span><span class="p">)</span>
@@ -13712,6 +13709,7 @@ $$ f_{n} = {\frac{1}{\sqrt{5}}}{[\phi^n -(-\phi)^{-n}]} \tag{1}, $$$$ \phi = (1 
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">start_time</span> <span class="o">=</span> <span class="n">timeit</span><span class="o">.</span><span class="n">default_timer</span><span class="p">()</span>
 <span class="n">n_disks</span> <span class="o">=</span> <span class="mi">5</span>
 <span class="n">hanoi_rec</span><span class="p">(</span><span class="n">n_disks</span><span class="p">,</span> <span class="s1">&#39;T1&#39;</span><span class="p">,</span> <span class="s1">&#39;T2&#39;</span><span class="p">,</span> <span class="s1">&#39;T3&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;number of movements:&#39;</span><span class="p">,</span> <span class="p">(</span><span class="mi">2</span><span class="o">**</span><span class="n">n_disks</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&gt;&gt; elapsed time&#39;</span><span class="p">,</span> <span class="p">(</span><span class="n">timeit</span><span class="o">.</span><span class="n">default_timer</span><span class="p">()</span> <span class="o">-</span> <span class="n">start_time</span><span class="p">)</span> <span class="o">*</span> <span class="mi">1000</span><span class="p">,</span> <span class="s1">&#39;ms&#39;</span><span class="p">)</span>
 </pre></div>
 
@@ -13760,7 +13758,8 @@ Move from: T1 , to: T3
 Move from: T2 , to: T1
 Move from: T2 , to: T3
 Move from: T1 , to: T3
-&gt;&gt; elapsed time 13.458100000001139 ms
+number of movements: 31
+&gt;&gt; elapsed time 33.9255000000005 ms
 </pre>
 </div>
 </div>
@@ -14050,7 +14049,7 @@ n temp: 256
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Difference between distributions</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Diff:&#39;</span><span class="p">,</span> <span class="n">total</span> <span class="o">-</span> <span class="nb">sum</span><span class="p">(</span><span class="n">data_new</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&gt;&gt; diff:&#39;</span><span class="p">,</span> <span class="n">total</span> <span class="o">-</span> <span class="nb">sum</span><span class="p">(</span><span class="n">data_new</span><span class="p">))</span>
 </pre></div>
 
     </div>
@@ -14067,7 +14066,7 @@ n temp: 256
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Diff: 0
+<pre>&gt;&gt; diff: 0
 </pre>
 </div>
 </div>
