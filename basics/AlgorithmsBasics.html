@@ -13237,7 +13237,7 @@ div#notebook {
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>4000000
-&gt;&gt; elapsed time 1532.1173 ms
+&gt;&gt; elapsed time 2976.0869999999995 ms
 </pre>
 </div>
 </div>
@@ -13300,7 +13300,7 @@ div#notebook {
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>4000000
-&gt;&gt; elapsed time 1.38780000000005 ms
+&gt;&gt; elapsed time 0.9731999999997853 ms
 </pre>
 </div>
 </div>
@@ -13381,7 +13381,7 @@ div#notebook {
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>9227465
-&gt;&gt; elapsed time 11510.7513 ms
+&gt;&gt; elapsed time 13881.463399999999 ms
 </pre>
 </div>
 </div>
@@ -13444,7 +13444,7 @@ div#notebook {
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>9227465
-&gt;&gt; elapsed time 0.33950000000082525 ms
+&gt;&gt; elapsed time 1.1033000000004733 ms
 </pre>
 </div>
 </div>
@@ -13510,7 +13510,7 @@ $$ f_{n} = {\frac{1}{\sqrt{5}}}{[\phi^n -(-\phi)^{-n}]} \tag{1}, $$$$ \phi = (1 
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>9227465
-&gt;&gt; elapsed time 0.4171999999993403 ms
+&gt;&gt; elapsed time 1.164200000001614 ms
 </pre>
 </div>
 </div>
@@ -13610,7 +13610,7 @@ $$ f_{n} = {\frac{1}{\sqrt{5}}}{[\phi^n -(-\phi)^{-n}]} \tag{1}, $$$$ \phi = (1 
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>(104723, 104729)
-&gt;&gt; elapsed time 51.8452000000007 ms
+&gt;&gt; elapsed time 67.2922999999983 ms
 </pre>
 </div>
 </div>
@@ -13667,7 +13667,7 @@ $$ f_{n} = {\frac{1}{\sqrt{5}}}{[\phi^n -(-\phi)^{-n}]} \tag{1}, $$$$ \phi = (1 
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>(104723, 104729)
-&gt;&gt; elapsed time 0.3373999999993771 ms
+&gt;&gt; elapsed time 0.4422999999995625 ms
 </pre>
 </div>
 </div>
@@ -13680,6 +13680,14 @@ $$ f_{n} = {\frac{1}{\sqrt{5}}}{[\phi^n -(-\phi)^{-n}]} \tag{1}, $$$$ \phi = (1 
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="4.-Tower-of-Hanoi">4. Tower of Hanoi<a class="anchor-link" href="#4.-Tower-of-Hanoi">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The recursive and classic algorithm:</p>
+
 </div>
 </div>
 </div>
@@ -13759,7 +13767,66 @@ Move from: T2 , to: T1
 Move from: T2 , to: T3
 Move from: T1 , to: T3
 number of movements: 31
-&gt;&gt; elapsed time 33.9255000000005 ms
+&gt;&gt; elapsed time 35.987599999998565 ms
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>An iterative algorithm:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[22]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Move n disk from source to destination</span>
+<span class="k">def</span> <span class="nf">hanoi_iter</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">source</span><span class="p">,</span> <span class="n">inter</span><span class="p">,</span> <span class="n">dest</span><span class="p">):</span>
+    <span class="k">return</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[23]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">start_time</span> <span class="o">=</span> <span class="n">timeit</span><span class="o">.</span><span class="n">default_timer</span><span class="p">()</span>
+<span class="n">n_disks</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">hanoi_iter</span><span class="p">(</span><span class="n">n_disks</span><span class="p">,</span> <span class="s1">&#39;T1&#39;</span><span class="p">,</span> <span class="s1">&#39;T2&#39;</span><span class="p">,</span> <span class="s1">&#39;T3&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;number of movements:&#39;</span><span class="p">,</span> <span class="p">(</span><span class="mi">2</span><span class="o">**</span><span class="n">n_disks</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&gt;&gt; elapsed time&#39;</span><span class="p">,</span> <span class="p">(</span><span class="n">timeit</span><span class="o">.</span><span class="n">default_timer</span><span class="p">()</span> <span class="o">-</span> <span class="n">start_time</span><span class="p">)</span> <span class="o">*</span> <span class="mi">1000</span><span class="p">,</span> <span class="s1">&#39;ms&#39;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>number of movements: 31
+&gt;&gt; elapsed time 1.3640999999999792 ms
 </pre>
 </div>
 </div>
@@ -13785,7 +13852,7 @@ number of movements: 31
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[22]:</div>
+<div class="prompt input_prompt">In&nbsp;[24]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Initialize variables</span>
@@ -13820,7 +13887,7 @@ number of movements: 31
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[23]:</div>
+<div class="prompt input_prompt">In&nbsp;[25]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Creating target distribution</span>
@@ -13837,7 +13904,7 @@ number of movements: 31
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[24]:</div>
+<div class="prompt input_prompt">In&nbsp;[26]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Create pretty x axis labels</span>
@@ -13858,7 +13925,7 @@ number of movements: 31
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[25]:</div>
+<div class="prompt input_prompt">In&nbsp;[27]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Function that plots a symbol distribution</span>
@@ -13886,7 +13953,7 @@ number of movements: 31
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[26]:</div>
+<div class="prompt input_prompt">In&nbsp;[28]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Function that calculates the new distribution</span>
@@ -13924,7 +13991,7 @@ number of movements: 31
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[27]:</div>
+<div class="prompt input_prompt">In&nbsp;[29]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Plot current distribution</span>
@@ -13968,7 +14035,7 @@ number of movements: 31
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[28]:</div>
+<div class="prompt input_prompt">In&nbsp;[30]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">data_new</span> <span class="o">=</span> <span class="n">get_new_dist</span><span class="p">(</span><span class="n">data_raw</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
@@ -14002,7 +14069,7 @@ n temp: 256
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[29]:</div>
+<div class="prompt input_prompt">In&nbsp;[31]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">plot_symbol_dist</span><span class="p">(</span><span class="n">data_new</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
@@ -14045,7 +14112,7 @@ n temp: 256
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[30]:</div>
+<div class="prompt input_prompt">In&nbsp;[32]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Difference between distributions</span>
