@@ -13238,7 +13238,7 @@ div#notebook {
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>4000000
-&gt;&gt; elapsed time 1226.9625 ms
+&gt;&gt; elapsed time 2536.5951 ms
 </pre>
 </div>
 </div>
@@ -13301,7 +13301,7 @@ div#notebook {
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>4000000
-&gt;&gt; elapsed time 2.060300000000126 ms
+&gt;&gt; elapsed time 2.0299999999999763 ms
 </pre>
 </div>
 </div>
@@ -13382,7 +13382,7 @@ div#notebook {
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>9227465
-&gt;&gt; elapsed time 6166.4206 ms
+&gt;&gt; elapsed time 12853.832299999998 ms
 </pre>
 </div>
 </div>
@@ -13445,7 +13445,7 @@ div#notebook {
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>9227465
-&gt;&gt; elapsed time 1.967299999999561 ms
+&gt;&gt; elapsed time 2.7471000000005574 ms
 </pre>
 </div>
 </div>
@@ -13511,7 +13511,7 @@ $$ f_{n} = {\frac{1}{\sqrt{5}}}{[\phi^n -(-\phi)^{-n}]} \tag{1}, $$$$ \phi = (1 
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>9227465
-&gt;&gt; elapsed time 1.1545999999995615 ms
+&gt;&gt; elapsed time 2.038999999999902 ms
 </pre>
 </div>
 </div>
@@ -13611,7 +13611,7 @@ $$ f_{n} = {\frac{1}{\sqrt{5}}}{[\phi^n -(-\phi)^{-n}]} \tag{1}, $$$$ \phi = (1 
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>(104723, 104729)
-&gt;&gt; elapsed time 50.32589999999981 ms
+&gt;&gt; elapsed time 71.34689999999999 ms
 </pre>
 </div>
 </div>
@@ -13668,7 +13668,7 @@ $$ f_{n} = {\frac{1}{\sqrt{5}}}{[\phi^n -(-\phi)^{-n}]} \tag{1}, $$$$ \phi = (1 
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>(104723, 104729)
-&gt;&gt; elapsed time 0.29539999999972366 ms
+&gt;&gt; elapsed time 1.1223000000004646 ms
 </pre>
 </div>
 </div>
@@ -13764,7 +13764,7 @@ Move disk 3 from: T2 to: T3
 Move disk 1 from: T1 to: T2
 Move disk 2 from: T1 to: T3
 Move disk 1 from: T2 to: T3
-&gt;&gt; elapsed time 20.64939999999993 ms
+&gt;&gt; elapsed time 7.007499999998501 ms
 </pre>
 </div>
 </div>
@@ -13791,36 +13791,36 @@ Move disk 1 from: T2 to: T3
     <span class="n">n_movements</span> <span class="o">=</span> <span class="mi">2</span><span class="o">**</span><span class="n">n_disks</span> <span class="o">-</span> <span class="mi">1</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&gt;&gt; number of movements:&#39;</span><span class="p">,</span> <span class="n">n_movements</span><span class="p">)</span>
 
-    <span class="n">s</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">t</span> <span class="o">=</span> <span class="p">[],</span> <span class="p">[],</span> <span class="p">[]</span>
+    <span class="n">tw_src</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_disks</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">):</span>
-        <span class="n">s</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+        <span class="n">tw_src</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
     
     <span class="n">labels</span> <span class="o">=</span> <span class="p">[</span><span class="n">source</span><span class="p">,</span> <span class="n">aux</span><span class="p">,</span> <span class="n">target</span><span class="p">]</span>
-    <span class="n">towers</span> <span class="o">=</span> <span class="p">[</span><span class="n">s</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">t</span><span class="p">]</span>
+    <span class="n">towers</span> <span class="o">=</span> <span class="p">[</span><span class="n">tw_src</span><span class="p">,</span> <span class="p">[],</span> <span class="p">[]]</span>
     <span class="n">indexes</span> <span class="o">=</span> <span class="n">cycle</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span> <span class="k">if</span> <span class="n">n</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span> <span class="k">else</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
-    <span class="n">s1</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">indexes</span><span class="p">)</span>
+    <span class="n">temp</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">indexes</span><span class="p">)</span>
     <span class="n">disk</span> <span class="o">=</span> <span class="mi">0</span>
     
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n_movements</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
             <span class="n">disk</span> <span class="o">=</span> <span class="mi">1</span>
-            <span class="n">t1</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">indexes</span><span class="p">)</span>
-            <span class="n">towers</span><span class="p">[</span><span class="n">t1</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">towers</span><span class="p">[</span><span class="n">s1</span><span class="p">]</span><span class="o">.</span><span class="n">pop</span><span class="p">())</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Move disk&#39;</span><span class="p">,</span> <span class="n">disk</span><span class="p">,</span> <span class="s1">&#39;from:&#39;</span><span class="p">,</span> <span class="n">labels</span><span class="p">[</span><span class="n">s1</span><span class="p">],</span> <span class="s1">&#39;to:&#39;</span><span class="p">,</span> <span class="n">labels</span><span class="p">[</span><span class="n">t1</span><span class="p">])</span>
-            <span class="n">s1</span> <span class="o">=</span> <span class="n">t1</span>
+            <span class="n">s</span><span class="p">,</span> <span class="n">t</span> <span class="o">=</span> <span class="n">temp</span><span class="p">,</span> <span class="nb">next</span><span class="p">(</span><span class="n">indexes</span><span class="p">)</span>
+            <span class="n">temp</span> <span class="o">=</span> <span class="n">t</span>
+            <span class="n">towers</span><span class="p">[</span><span class="n">t</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">towers</span><span class="p">[</span><span class="n">s</span><span class="p">]</span><span class="o">.</span><span class="n">pop</span><span class="p">())</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Move disk&#39;</span><span class="p">,</span> <span class="n">disk</span><span class="p">,</span> <span class="s1">&#39;from:&#39;</span><span class="p">,</span> <span class="n">labels</span><span class="p">[</span><span class="n">s</span><span class="p">],</span> <span class="s1">&#39;to:&#39;</span><span class="p">,</span> <span class="n">labels</span><span class="p">[</span><span class="n">t</span><span class="p">])</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="n">i_t2</span><span class="p">,</span> <span class="n">i_t3</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="k">if</span> <span class="n">i</span> <span class="o">!=</span> <span class="n">t1</span><span class="p">]</span>
+            <span class="n">i_t2</span><span class="p">,</span> <span class="n">i_t3</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="k">if</span> <span class="n">i</span> <span class="o">!=</span> <span class="n">temp</span><span class="p">]</span>
             <span class="n">v_t2</span> <span class="o">=</span> <span class="n">towers</span><span class="p">[</span><span class="n">i_t2</span><span class="p">][</span><span class="nb">len</span><span class="p">(</span><span class="n">towers</span><span class="p">[</span><span class="n">i_t2</span><span class="p">])</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">towers</span><span class="p">[</span><span class="n">i_t2</span><span class="p">])</span> <span class="k">else</span> <span class="n">math</span><span class="o">.</span><span class="n">inf</span>
             <span class="n">v_t3</span> <span class="o">=</span> <span class="n">towers</span><span class="p">[</span><span class="n">i_t3</span><span class="p">][</span><span class="nb">len</span><span class="p">(</span><span class="n">towers</span><span class="p">[</span><span class="n">i_t3</span><span class="p">])</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">towers</span><span class="p">[</span><span class="n">i_t3</span><span class="p">])</span> <span class="k">else</span> <span class="n">math</span><span class="o">.</span><span class="n">inf</span>
             
             <span class="k">if</span> <span class="n">v_t2</span> <span class="o">&lt;</span> <span class="n">v_t3</span><span class="p">:</span>
-                <span class="n">s2</span><span class="p">,</span> <span class="n">t2</span> <span class="o">=</span> <span class="n">i_t2</span><span class="p">,</span> <span class="n">i_t3</span>
+                <span class="n">s</span><span class="p">,</span> <span class="n">t</span> <span class="o">=</span> <span class="n">i_t2</span><span class="p">,</span> <span class="n">i_t3</span>
             <span class="k">else</span><span class="p">:</span>
-                <span class="n">s2</span><span class="p">,</span> <span class="n">t2</span> <span class="o">=</span> <span class="n">i_t3</span><span class="p">,</span> <span class="n">i_t2</span>
+                <span class="n">s</span><span class="p">,</span> <span class="n">t</span> <span class="o">=</span> <span class="n">i_t3</span><span class="p">,</span> <span class="n">i_t2</span>
             
-            <span class="n">disk</span> <span class="o">=</span> <span class="n">towers</span><span class="p">[</span><span class="n">s2</span><span class="p">]</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
-            <span class="n">towers</span><span class="p">[</span><span class="n">t2</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">disk</span><span class="p">)</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Move disk&#39;</span><span class="p">,</span> <span class="n">disk</span><span class="p">,</span> <span class="s1">&#39;from:&#39;</span><span class="p">,</span> <span class="n">labels</span><span class="p">[</span><span class="n">s2</span><span class="p">],</span> <span class="s1">&#39;to:&#39;</span><span class="p">,</span> <span class="n">labels</span><span class="p">[</span><span class="n">t2</span><span class="p">])</span>
+            <span class="n">disk</span> <span class="o">=</span> <span class="n">towers</span><span class="p">[</span><span class="n">s</span><span class="p">]</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+            <span class="n">towers</span><span class="p">[</span><span class="n">t</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">disk</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Move disk&#39;</span><span class="p">,</span> <span class="n">disk</span><span class="p">,</span> <span class="s1">&#39;from:&#39;</span><span class="p">,</span> <span class="n">labels</span><span class="p">[</span><span class="n">s</span><span class="p">],</span> <span class="s1">&#39;to:&#39;</span><span class="p">,</span> <span class="n">labels</span><span class="p">[</span><span class="n">t</span><span class="p">])</span>
 </pre></div>
 
     </div>
@@ -13868,7 +13868,7 @@ Move disk 3 from: T2 to: T3
 Move disk 1 from: T1 to: T2
 Move disk 2 from: T1 to: T3
 Move disk 1 from: T2 to: T3
-&gt;&gt; elapsed time 7.511000000000045 ms
+&gt;&gt; elapsed time 27.42810000000162 ms
 </pre>
 </div>
 </div>
