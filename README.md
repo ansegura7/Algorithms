@@ -19,9 +19,9 @@ In mathematics and computer science, an algorithm is a finite sequence of well-d
 <ul>
 	<li>Graph or Undirected Simple Graph</li>
 	<li>Graph Traversal</li>
-	<li>Minimum Spanning Tree of an Undirected Weighted Graph</li>
+	<li>Minimum Spanning Tree</li>
 	<li>Eulerian Circuit and Path</li>
-	<li>Shortest Path of a Directed Weighted Graph</li>
+	<li>Shortest Path</li>
 	<li>All-Pairs Shortest Path</li>
 	<li>Graph Coloring</li>
 </ul>
