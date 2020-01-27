@@ -27,7 +27,15 @@ In mathematics and computer science, an algorithm is a finite sequence of well-d
 </ul>
 </details>
 <details>
-<summary>3. <a href="https://ansegura7.github.io/Algorithms/probabilistic-algorithms/ProbabilisticAlgorithms.html" target="_blank" >Probabilistic Algorithms</a></summary>
+<summary>3. <a href="https://ansegura7.github.io/Algorithms/dynamic-programming/DynamicProgramming.html" target="_blank" >Dynamic Programming</a></summary>
+<ul>
+	<li>Binomial Coefficient</li>
+	<li>World Championship Problem</li>
+	<li>Coin Change Problem</li>
+</ul>
+</details>
+<details>
+<summary>4. <a href="https://ansegura7.github.io/Algorithms/probabilistic-algorithms/ProbabilisticAlgorithms.html" target="_blank" >Probabilistic Algorithms</a></summary>
 <ul>
 	<li>Pseudo-Random Number Generator</li>
 	<li>Primality Test</li>
@@ -38,7 +46,7 @@ In mathematics and computer science, an algorithm is a finite sequence of well-d
 </ul>
 </details>
 <details>
-<summary>4. <a href="https://ansegura7.github.io/Algorithms/similarity-functions/SimilarityFunctions.html" target="_blank" >Similarity Functions</a></summary>
+<summary>5. <a href="https://ansegura7.github.io/Algorithms/similarity-functions/SimilarityFunctions.html" target="_blank" >Similarity Functions</a></summary>
 <ul>
 	<li>Common Similarity functions</li>
 	<li>Manual examples</li>
@@ -46,14 +54,14 @@ In mathematics and computer science, an algorithm is a finite sequence of well-d
 </ul>
 </details>
 <details>
-<summary>5. <a href="https://ansegura7.github.io/Algorithms/chaotic-systems/ChaoticSystems.html" target="_blank" >Chaotic Systems</a></summary>
+<summary>6. <a href="https://ansegura7.github.io/Algorithms/chaotic-systems/ChaoticSystems.html" target="_blank" >Chaotic Systems</a></summary>
 <ul>
 	<li>Chaotic Systems intro</li>
 	<li>Fractals</li>
 </ul>
 </details>
 <details>
-<summary>6. <a href="https://ansegura7.github.io/Algorithms/cellular-automata/CellularAutomata.html" target="_blank" >Cellular Automata</a></summary>
+<summary>7. <a href="https://ansegura7.github.io/Algorithms/cellular-automata/CellularAutomata.html" target="_blank" >Cellular Automata</a></summary>
 <ul>
 	<li>Linear Cellular Automata (LCA)</li>
 	<li>Reversible Linear Cellular Automata (RLCA)</li>
