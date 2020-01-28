@@ -30,8 +30,9 @@ In mathematics and computer science, an algorithm is a finite sequence of well-d
 <summary>3. <a href="https://ansegura7.github.io/Algorithms/dynamic-programming/DynamicProgramming.html" target="_blank" >Dynamic Programming</a></summary>
 <ul>
 	<li>Binomial Coefficient</li>
-	<li>World Championship Problem</li>
-	<li>Coin Change Problem</li>
+	<li>World Championship problem</li>
+	<li>Coin Change problem</li>
+	<li>The Knapsack problem</li>
 </ul>
 </details>
 <details>

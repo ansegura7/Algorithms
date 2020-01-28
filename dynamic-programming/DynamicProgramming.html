@@ -13226,7 +13226,7 @@ div#notebook {
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>184756
-&gt;&gt; elapsed time 86.3496 ms
+&gt;&gt; elapsed time 89.0215 ms
 </pre>
 </div>
 </div>
@@ -13290,7 +13290,7 @@ div#notebook {
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>184756
-&gt;&gt; elapsed time 0.4678999999999933 ms
+&gt;&gt; elapsed time 1.5061999999999993 ms
 </pre>
 </div>
 </div>
@@ -13310,7 +13310,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="2.-World-Championship-Problem">2. World Championship Problem<a class="anchor-link" href="#2.-World-Championship-Problem">&#182;</a></h2>
+<h2 id="2.-World-Championship-problem">2. World Championship problem<a class="anchor-link" href="#2.-World-Championship-problem">&#182;</a></h2>
 </div>
 </div>
 </div>
@@ -13381,7 +13381,7 @@ div#notebook {
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>0.6710359124216079
-&gt;&gt; elapsed time 211.011 ms
+&gt;&gt; elapsed time 128.1552 ms
 </pre>
 </div>
 </div>
@@ -13450,7 +13450,7 @@ div#notebook {
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>0.6710359124216079
-&gt;&gt; elapsed time 2.620100000000014 ms
+&gt;&gt; elapsed time 0.8978000000000042 ms
 </pre>
 </div>
 </div>
@@ -13470,7 +13470,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="3.-Coin-Change-Problem">3. Coin Change Problem<a class="anchor-link" href="#3.-Coin-Change-Problem">&#182;</a></h2>
+<h2 id="3.-Coin-Change-problem">3. Coin Change problem<a class="anchor-link" href="#3.-Coin-Change-problem">&#182;</a></h2>
 </div>
 </div>
 </div>
@@ -13485,7 +13485,8 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Returns-all-possible-combinations-of-coins-change">Returns all possible combinations of coins change<a class="anchor-link" href="#Returns-all-possible-combinations-of-coins-change">&#182;</a></h4>
+<h4 id="Returns-all-possible-combinations-of-coins-change-with-Dynamic-Programming">Returns all possible combinations of coins change with Dynamic Programming<a class="anchor-link" href="#Returns-all-possible-combinations-of-coins-change-with-Dynamic-Programming">&#182;</a></h4><p>Version with unlimited supply of coins.</p>
+
 </div>
 </div>
 </div>
@@ -13522,12 +13523,12 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[13]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Example</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Example values</span>
 <span class="n">N</span> <span class="o">=</span> <span class="mi">8</span>
 <span class="n">d</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
-<span class="n">coins</span> <span class="o">=</span> <span class="n">coin_change</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">d</span><span class="p">)</span>
 
 <span class="c1"># Showing results</span>
+<span class="n">coins</span> <span class="o">=</span> <span class="n">coin_change</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">d</span><span class="p">)</span>
 <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">coins</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">d</span><span class="p">)</span>
 </pre></div>
 
@@ -13634,7 +13635,8 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Calculate-the-list-of-coins-needed-to-give-change">Calculate the list of coins needed to give change<a class="anchor-link" href="#Calculate-the-list-of-coins-needed-to-give-change">&#182;</a></h4>
+<h4 id="Calculate-the-list-of-coins-needed-to-give-change">Calculate the list of coins needed to give change<a class="anchor-link" href="#Calculate-the-list-of-coins-needed-to-give-change">&#182;</a></h4><p>Greedy approach</p>
+
 </div>
 </div>
 </div>
@@ -13656,6 +13658,7 @@ div#notebook {
             <span class="n">j</span> <span class="o">=</span> <span class="n">j</span> <span class="o">-</span> <span class="n">d</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="k">break</span>
+    
     <span class="k">return</span> <span class="n">coins_list</span>
 </pre></div>
 
@@ -13669,7 +13672,8 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[15]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">N</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># List of coins for each scenario</span>
+<span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">N</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">j</span><span class="p">,</span> <span class="s1">&#39;-&gt;&#39;</span><span class="p">,</span> <span class="n">get_coins_list</span><span class="p">(</span><span class="n">coins</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">j</span><span class="p">))</span>
 </pre></div>
 
@@ -13715,6 +13719,307 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="4.-The-Knapsack-problem">4. The Knapsack problem<a class="anchor-link" href="#4.-The-Knapsack-problem">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The <strong>knapsack problem</strong> or rucksack problem is a problem in combinatorial optimization: Given a set of items, each with a weight and a value, determine the number of each item to include in a collection so that the total weight is less than or equal to a given limit <strong>W</strong> and the total value is as large as possible. It derives its name from the problem faced by someone who is constrained by a fixed-size knapsack and must fill it with the most valuable items <a href="#link_three">[3]</a>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Get-best-items-combination-with-Dynamic-Programming">Get best items combination with Dynamic Programming<a class="anchor-link" href="#Get-best-items-combination-with-Dynamic-Programming">&#182;</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">get_best_knapsack</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">W</span><span class="p">):</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+    <span class="n">values</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="n">W</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)]</span>
+    
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">W</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">w</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span>
+                <span class="n">values</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="n">math</span><span class="o">.</span><span class="n">inf</span>
+            <span class="k">elif</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">values</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+            <span class="k">elif</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">w</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span>
+                <span class="n">values</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">values</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">][</span><span class="n">j</span><span class="p">]</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">values</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">values</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">][</span><span class="n">j</span><span class="p">],</span> <span class="n">values</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">][</span><span class="n">j</span> <span class="o">-</span> <span class="n">w</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span> <span class="o">+</span> <span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+    
+    <span class="k">return</span> <span class="n">values</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[17]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Example values</span>
+<span class="n">w</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">]</span>
+<span class="n">v</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">28</span><span class="p">]</span>
+<span class="n">max_weight</span> <span class="o">=</span> <span class="mi">11</span>
+
+<span class="c1"># Run algorithm</span>
+<span class="n">knapsack</span> <span class="o">=</span> <span class="n">get_best_knapsack</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">max_weight</span><span class="p">)</span>
+<span class="n">df_index</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;w:&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">w</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">+</span> <span class="s2">&quot;, v:&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">v</span><span class="p">))]</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">knapsack</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">df_index</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[17]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+      <th>1</th>
+      <th>2</th>
+      <th>3</th>
+      <th>4</th>
+      <th>5</th>
+      <th>6</th>
+      <th>7</th>
+      <th>8</th>
+      <th>9</th>
+      <th>10</th>
+      <th>11</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>w:1, v:1</th>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>w:2, v:6</th>
+      <td>0</td>
+      <td>1</td>
+      <td>6</td>
+      <td>7</td>
+      <td>7</td>
+      <td>7</td>
+      <td>7</td>
+      <td>7</td>
+      <td>7</td>
+      <td>7</td>
+      <td>7</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <th>w:5, v:18</th>
+      <td>0</td>
+      <td>1</td>
+      <td>6</td>
+      <td>7</td>
+      <td>7</td>
+      <td>18</td>
+      <td>19</td>
+      <td>24</td>
+      <td>25</td>
+      <td>25</td>
+      <td>25</td>
+      <td>25</td>
+    </tr>
+    <tr>
+      <th>w:6, v:22</th>
+      <td>0</td>
+      <td>1</td>
+      <td>6</td>
+      <td>7</td>
+      <td>7</td>
+      <td>18</td>
+      <td>22</td>
+      <td>24</td>
+      <td>28</td>
+      <td>29</td>
+      <td>29</td>
+      <td>40</td>
+    </tr>
+    <tr>
+      <th>w:7, v:28</th>
+      <td>0</td>
+      <td>1</td>
+      <td>6</td>
+      <td>7</td>
+      <td>7</td>
+      <td>18</td>
+      <td>22</td>
+      <td>28</td>
+      <td>29</td>
+      <td>34</td>
+      <td>35</td>
+      <td>40</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>With computational complexity of $ \Theta(nW) $ and a space complexity of $ \Theta(n(W + 1)) $.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Calculate-the-list-of-items-needed-to-fill-the-backpack">Calculate the list of items needed to fill the backpack<a class="anchor-link" href="#Calculate-the-list-of-items-needed-to-fill-the-backpack">&#182;</a></h4><p>Greedy approach</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">get_items_list</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">W</span><span class="p">):</span>
+    <span class="n">item_list</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">w</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
+    <span class="n">j</span> <span class="o">=</span> <span class="n">W</span>
+    
+    <span class="k">while</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="o">-</span><span class="mi">1</span> <span class="ow">and</span> <span class="n">j</span> <span class="o">&gt;</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">i</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">values</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">==</span> <span class="n">values</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">][</span><span class="n">j</span><span class="p">]:</span>
+            <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">-</span> <span class="mi">1</span>
+        <span class="k">elif</span> <span class="n">i</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">j</span> <span class="o">-</span> <span class="n">w</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">values</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">==</span> <span class="n">values</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">][</span><span class="n">j</span> <span class="o">-</span> <span class="n">w</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span> <span class="o">+</span> <span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span>
+            <span class="n">item</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;w&quot;</span><span class="p">:</span> <span class="n">w</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="s2">&quot;v&quot;</span><span class="p">:</span> <span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="p">}</span>
+            <span class="n">item_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+            <span class="n">j</span> <span class="o">=</span> <span class="n">j</span> <span class="o">-</span> <span class="n">w</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+            <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">-</span> <span class="mi">1</span>
+        <span class="k">elif</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">values</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">==</span> <span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span>
+            <span class="n">item</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;w&quot;</span><span class="p">:</span> <span class="n">w</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="s2">&quot;v&quot;</span><span class="p">:</span> <span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="p">}</span>
+            <span class="n">item_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+            <span class="k">break</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">break</span>
+    
+    <span class="k">return</span> <span class="n">item_list</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># List of coins for each scenario</span>
+<span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">max_weight</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">j</span><span class="p">,</span> <span class="s1">&#39;-&gt;&#39;</span><span class="p">,</span> <span class="n">get_items_list</span><span class="p">(</span><span class="n">knapsack</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">j</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>0 -&gt; []
+1 -&gt; [{&#39;w&#39;: 1, &#39;v&#39;: 1}]
+2 -&gt; [{&#39;w&#39;: 2, &#39;v&#39;: 6}]
+3 -&gt; [{&#39;w&#39;: 2, &#39;v&#39;: 6}, {&#39;w&#39;: 1, &#39;v&#39;: 1}]
+4 -&gt; [{&#39;w&#39;: 2, &#39;v&#39;: 6}, {&#39;w&#39;: 1, &#39;v&#39;: 1}]
+5 -&gt; [{&#39;w&#39;: 5, &#39;v&#39;: 18}]
+6 -&gt; [{&#39;w&#39;: 6, &#39;v&#39;: 22}]
+7 -&gt; [{&#39;w&#39;: 7, &#39;v&#39;: 28}]
+8 -&gt; [{&#39;w&#39;: 7, &#39;v&#39;: 28}, {&#39;w&#39;: 1, &#39;v&#39;: 1}]
+9 -&gt; [{&#39;w&#39;: 7, &#39;v&#39;: 28}, {&#39;w&#39;: 2, &#39;v&#39;: 6}]
+10 -&gt; [{&#39;w&#39;: 7, &#39;v&#39;: 28}, {&#39;w&#39;: 2, &#39;v&#39;: 6}, {&#39;w&#39;: 1, &#39;v&#39;: 1}]
+11 -&gt; [{&#39;w&#39;: 6, &#39;v&#39;: 22}, {&#39;w&#39;: 5, &#39;v&#39;: 18}]
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>With computational complexity of $ \Theta(n + W) $ and a space complexity of $ \Theta(n(W + 1)) $.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Reference">Reference<a class="anchor-link" href="#Reference">&#182;</a></h2>
 </div>
 </div>
@@ -13723,7 +14028,8 @@ div#notebook {
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><a name='link_one' href='https://en.wikipedia.org/wiki/Dynamic_programming' target='_blank' >[1]</a> Wikipedia - Dynamic Programming.<br>
-<a name='link_two' href='https://en.wikipedia.org/wiki/Change-making_problem' target='_blank' >[2]</a> Wikipedia - Change-making problem.</p>
+<a name='link_two' href='https://en.wikipedia.org/wiki/Change-making_problem' target='_blank' >[2]</a> Wikipedia - Change-making problem.<br>
+<a name='link_three' href='https://en.wikipedia.org/wiki/Knapsack_problem' target='_blank' >[3]</a> Wikipedia - Knapsack problem.</p>
 
 </div>
 </div>
