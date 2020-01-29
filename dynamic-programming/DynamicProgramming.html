@@ -13134,6 +13134,14 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>Dynamic programming</strong> is an efficient technique for solving many combinatorial optimization problems in a polynomial time.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>Dynamic programming is both a mathematical optimization method and a computer programming method. In both contexts it refers to simplifying a complicated problem by breaking it down into simpler sub-problems in a recursive manner <a href="#link_one">[1]</a>. There are two key attributes that a problem must have in order for dynamic programming to be applicable: optimal substructure and overlapping sub-problems.</p>
 
 </div>
@@ -13144,6 +13152,21 @@ div#notebook {
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Principle-of-Optimality">Principle of Optimality<a class="anchor-link" href="#Principle-of-Optimality">&#182;</a></h2><p>An optimal policy has the property that whatever the initial state and initial decision are, the remaining decisions must constitute an optimal policy with regard to the state resulting from the first decision <a href="#link_two">[2]</a>. (See Bellman, 1957, Chap. III.3.)</p>
 
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="1.-Binomial-Coefficient">1. Binomial Coefficient<a class="anchor-link" href="#1.-Binomial-Coefficient">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In mathematics, the <strong>binomial coefficients</strong> are the positive integers that occur as coefficients in the binomial theorem. Commonly, a binomial coefficient is indexed by a pair of integers $ n ≥ k ≥ 0 $ and is written $ \tbinom {n}{k} $. It is the coefficient of the $ x^k $ term in the polynomial expansion of the binomial power $ (1 + x)^n $, and it is given by the formula <a href="#link_three">[3]</a>:</p>
+$$ \tbinom {n}{k} = \frac {n!}{k!(n-k)!} \tag{1}$$
 </div>
 </div>
 </div>
@@ -13162,21 +13185,6 @@ div#notebook {
 </div>
 </div>
 
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="1.-Binomial-Coefficient">1. Binomial Coefficient<a class="anchor-link" href="#1.-Binomial-Coefficient">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>In mathematics, the <strong>binomial coefficients</strong> are the positive integers that occur as coefficients in the binomial theorem. Commonly, a binomial coefficient is indexed by a pair of integers $ n ≥ k ≥ 0 $ and is written $ \tbinom {n}{k} $. It is the coefficient of the $ x^k $ term in the polynomial expansion of the binomial power $ (1 + x)^n $, and it is given by the formula <a href="#link_three">[3]</a>:</p>
-$$ \tbinom {n}{k} = \frac {n!}{k!(n-k)!} \tag{1}$$
-</div>
-</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
@@ -13240,7 +13248,7 @@ $$ \tbinom {n}{k} = \frac {n!}{k!(n-k)!} \tag{1}$$
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>3268760
-&gt;&gt; elapsed time 1.4735 ms
+&gt;&gt; elapsed time 1.1562000000000001 ms
 </pre>
 </div>
 </div>
@@ -13298,7 +13306,7 @@ $$ \tbinom {n}{k} = \frac {n!}{k!(n-k)!} \tag{1}$$
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>3268760
-&gt;&gt; elapsed time 1706.187 ms
+&gt;&gt; elapsed time 1614.6856 ms
 </pre>
 </div>
 </div>
@@ -13362,7 +13370,7 @@ $$ \tbinom {n}{k} = \frac {n!}{k!(n-k)!} \tag{1}$$
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>3268760
-&gt;&gt; elapsed time 1.566200000000073 ms
+&gt;&gt; elapsed time 1.2001000000001483 ms
 </pre>
 </div>
 </div>
@@ -13453,7 +13461,7 @@ $$ \tbinom {n}{k} = \frac {n!}{k!(n-k)!} \tag{1}$$
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>0.6710359124216079
-&gt;&gt; elapsed time 178.21419999999998 ms
+&gt;&gt; elapsed time 136.05639999999997 ms
 </pre>
 </div>
 </div>
@@ -13522,7 +13530,7 @@ $$ \tbinom {n}{k} = \frac {n!}{k!(n-k)!} \tag{1}$$
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>0.6710359124216079
-&gt;&gt; elapsed time 0.9391999999999179 ms
+&gt;&gt; elapsed time 1.4372000000000273 ms
 </pre>
 </div>
 </div>
