@@ -47,7 +47,7 @@ In mathematics and computer science, an algorithm is a finite sequence of well-d
 	<li>Law of Large Numbers</li>
 </ul>
 </details>
-<details>
+<details open>
 <summary>5. <a href="https://ansegura7.github.io/Algorithms/similarity-functions/SimilarityFunctions.html" target="_blank" >Similarity Functions</a></summary>
 <ul>
 	<li>Common Similarity functions</li>
