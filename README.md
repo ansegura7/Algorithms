@@ -14,7 +14,7 @@ In mathematics and computer science, an algorithm is a finite sequence of well-d
 	<li>Changing Distribution</li>
 </ul>
 </details>
-<details>
+<details open>
 <summary>2. <a href="https://ansegura7.github.io/Algorithms/graphs/Graphs.html" target="_blank" >Graphs</a></summary>
 <ul>
 	<li>Graph or Undirected Simple Graph</li>
@@ -26,16 +26,17 @@ In mathematics and computer science, an algorithm is a finite sequence of well-d
 	<li>Graph Coloring</li>
 </ul>
 </details>
-<details>
+<details open>
 <summary>3. <a href="https://ansegura7.github.io/Algorithms/dynamic-programming/DynamicProgramming.html" target="_blank" >Dynamic Programming</a></summary>
 <ul>
 	<li>Binomial Coefficient</li>
 	<li>World Championship problem</li>
 	<li>Coin Change problem</li>
 	<li>The Knapsack problem</li>
+	<li>Longest Common Subsequence problem</li>
 </ul>
 </details>
-<details>
+<details open>
 <summary>4. <a href="https://ansegura7.github.io/Algorithms/probabilistic-algorithms/ProbabilisticAlgorithms.html" target="_blank" >Probabilistic Algorithms</a></summary>
 <ul>
 	<li>Pseudo-Random Number Generator</li>
@@ -54,14 +55,14 @@ In mathematics and computer science, an algorithm is a finite sequence of well-d
 	<li>Sklearn examples</li>
 </ul>
 </details>
-<details>
+<details open>
 <summary>6. <a href="https://ansegura7.github.io/Algorithms/chaotic-systems/ChaoticSystems.html" target="_blank" >Chaotic Systems</a></summary>
 <ul>
 	<li>Chaotic Systems intro</li>
 	<li>Fractals</li>
 </ul>
 </details>
-<details>
+<details open>
 <summary>7. <a href="https://ansegura7.github.io/Algorithms/cellular-automata/CellularAutomata.html" target="_blank" >Cellular Automata</a></summary>
 <ul>
 	<li>Linear Cellular Automata (LCA)</li>
