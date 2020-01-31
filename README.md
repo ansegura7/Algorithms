@@ -34,6 +34,7 @@ In mathematics and computer science, an algorithm is a finite sequence of well-d
 	<li>Coin Change problem</li>
 	<li>The Knapsack problem</li>
 	<li>Longest Common Subsequence problem</li>
+	<li>Sequence Alignment problem</li>
 </ul>
 </details>
 <details open>
