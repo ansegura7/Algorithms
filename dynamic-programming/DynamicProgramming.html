@@ -13248,7 +13248,7 @@ $$ \tbinom {n}{k} = \frac {n!}{k!(n-k)!} \tag{1}$$
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>3268760
-&gt;&gt; elapsed time 1.7393 ms
+&gt;&gt; elapsed time 4.044199999999999 ms
 </pre>
 </div>
 </div>
@@ -13306,7 +13306,7 @@ $$ \tbinom {n}{k} = \frac {n!}{k!(n-k)!} \tag{1}$$
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>3268760
-&gt;&gt; elapsed time 2153.3787 ms
+&gt;&gt; elapsed time 1431.8592 ms
 </pre>
 </div>
 </div>
@@ -13370,7 +13370,7 @@ $$ \tbinom {n}{k} = \frac {n!}{k!(n-k)!} \tag{1}$$
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>3268760
-&gt;&gt; elapsed time 1.879299999999695 ms
+&gt;&gt; elapsed time 1.5879000000000865 ms
 </pre>
 </div>
 </div>
@@ -13461,7 +13461,7 @@ $$ \tbinom {n}{k} = \frac {n!}{k!(n-k)!} \tag{1}$$
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>0.6710359124216079
-&gt;&gt; elapsed time 152.8468000000003 ms
+&gt;&gt; elapsed time 130.83449999999996 ms
 </pre>
 </div>
 </div>
@@ -13530,7 +13530,7 @@ $$ \tbinom {n}{k} = \frac {n!}{k!(n-k)!} \tag{1}$$
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>0.6710359124216079
-&gt;&gt; elapsed time 2.541700000000091 ms
+&gt;&gt; elapsed time 1.5977000000000352 ms
 </pre>
 </div>
 </div>
@@ -13575,7 +13575,7 @@ $$ \tbinom {n}{k} = \frac {n!}{k!(n-k)!} \tag{1}$$
 <div class="prompt input_prompt">In&nbsp;[14]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">coin_change</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">d</span><span class="p">):</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">calc_coin_change</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">d</span><span class="p">):</span>
     <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
     <span class="n">matrix</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="n">N</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)]</span>
     
@@ -13608,8 +13608,8 @@ $$ \tbinom {n}{k} = \frac {n!}{k!(n-k)!} \tag{1}$$
 <span class="n">d</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
 
 <span class="c1"># Showing results</span>
-<span class="n">coins</span> <span class="o">=</span> <span class="n">coin_change</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">d</span><span class="p">)</span>
-<span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">coins</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">d</span><span class="p">)</span>
+<span class="n">dp_table</span> <span class="o">=</span> <span class="n">calc_coin_change</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">d</span><span class="p">)</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">dp_table</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">d</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13725,12 +13725,15 @@ $$ \tbinom {n}{k} = \frac {n!}{k!(n-k)!} \tag{1}$$
 <div class="prompt input_prompt">In&nbsp;[16]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">get_coins_list</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">N</span><span class="p">):</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">get_coins_list</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
     <span class="n">coins_list</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="n">i</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">d</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
     <span class="n">j</span> <span class="o">=</span> <span class="n">N</span>
     
     <span class="k">while</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="o">-</span><span class="mi">1</span> <span class="ow">and</span> <span class="n">j</span> <span class="o">&gt;</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">verbose</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">)</span>
+            
         <span class="k">if</span> <span class="n">i</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">c</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">==</span> <span class="n">c</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">][</span><span class="n">j</span><span class="p">]:</span>
             <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">-</span> <span class="mi">1</span>
         <span class="k">elif</span> <span class="n">j</span> <span class="o">-</span> <span class="n">d</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">c</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">c</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span> <span class="o">-</span> <span class="n">d</span><span class="p">[</span><span class="n">i</span><span class="p">]]:</span>
@@ -13754,7 +13757,7 @@ $$ \tbinom {n}{k} = \frac {n!}{k!(n-k)!} \tag{1}$$
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># List of coins for each scenario</span>
 <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">N</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">j</span><span class="p">,</span> <span class="s1">&#39;-&gt;&#39;</span><span class="p">,</span> <span class="n">get_coins_list</span><span class="p">(</span><span class="n">coins</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">j</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">j</span><span class="p">,</span> <span class="s1">&#39;-&gt;&#39;</span><span class="p">,</span> <span class="n">get_coins_list</span><span class="p">(</span><span class="n">dp_table</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">j</span><span class="p">))</span>
 </pre></div>
 
     </div>
@@ -13823,7 +13826,7 @@ $$ \tbinom {n}{k} = \frac {n!}{k!(n-k)!} \tag{1}$$
 <div class="prompt input_prompt">In&nbsp;[18]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">get_best_knapsack</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">W</span><span class="p">):</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">calc_best_knapsack</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">W</span><span class="p">):</span>
     <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
     <span class="n">matrix</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="n">W</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)]</span>
     
@@ -13857,9 +13860,9 @@ $$ \tbinom {n}{k} = \frac {n!}{k!(n-k)!} \tag{1}$$
 <span class="n">max_weight</span> <span class="o">=</span> <span class="mi">11</span>
 
 <span class="c1"># Run algorithm</span>
-<span class="n">knapsack</span> <span class="o">=</span> <span class="n">get_best_knapsack</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">max_weight</span><span class="p">)</span>
+<span class="n">dp_table</span> <span class="o">=</span> <span class="n">calc_best_knapsack</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">max_weight</span><span class="p">)</span>
 <span class="n">df_index</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;w:&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">w</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">+</span> <span class="s2">&quot;, v:&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">v</span><span class="p">))]</span>
-<span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">knapsack</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">df_index</span><span class="p">)</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">dp_table</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">df_index</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -14017,12 +14020,15 @@ $$ \tbinom {n}{k} = \frac {n!}{k!(n-k)!} \tag{1}$$
 <div class="prompt input_prompt">In&nbsp;[20]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">get_items_list</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">W</span><span class="p">):</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">get_items_list</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">W</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
     <span class="n">item_list</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="n">i</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">w</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
     <span class="n">j</span> <span class="o">=</span> <span class="n">W</span>
     
     <span class="k">while</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="o">-</span><span class="mi">1</span> <span class="ow">and</span> <span class="n">j</span> <span class="o">&gt;</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">verbose</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">)</span>
+            
         <span class="k">if</span> <span class="n">i</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">values</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">==</span> <span class="n">values</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">][</span><span class="n">j</span><span class="p">]:</span>
             <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">-</span> <span class="mi">1</span>
         <span class="k">elif</span> <span class="n">i</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">j</span> <span class="o">-</span> <span class="n">w</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">values</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">==</span> <span class="n">values</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">][</span><span class="n">j</span> <span class="o">-</span> <span class="n">w</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span> <span class="o">+</span> <span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span>
@@ -14052,7 +14058,7 @@ $$ \tbinom {n}{k} = \frac {n!}{k!(n-k)!} \tag{1}$$
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># List of coins for each scenario</span>
 <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">max_weight</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">j</span><span class="p">,</span> <span class="s1">&#39;-&gt;&#39;</span><span class="p">,</span> <span class="n">get_items_list</span><span class="p">(</span><span class="n">knapsack</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">j</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">j</span><span class="p">,</span> <span class="s1">&#39;-&gt;&#39;</span><span class="p">,</span> <span class="n">get_items_list</span><span class="p">(</span><span class="n">dp_table</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">j</span><span class="p">))</span>
 </pre></div>
 
     </div>
@@ -14155,8 +14161,8 @@ $$ \tbinom {n}{k} = \frac {n!}{k!(n-k)!} \tag{1}$$
 <span class="n">b</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;M&#39;</span><span class="p">,</span> <span class="s1">&#39;Z&#39;</span><span class="p">,</span> <span class="s1">&#39;J&#39;</span><span class="p">,</span> <span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;W&#39;</span><span class="p">,</span> <span class="s1">&#39;X&#39;</span><span class="p">,</span> <span class="s1">&#39;U&#39;</span><span class="p">]</span>
 
 <span class="c1"># Run algorithm</span>
-<span class="n">lcs</span> <span class="o">=</span> <span class="n">calc_lcs</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
-<span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">lcs</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;-&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="n">a</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;-&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="n">b</span><span class="p">)</span>
+<span class="n">dp_table</span> <span class="o">=</span> <span class="n">calc_lcs</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">dp_table</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;-&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="n">a</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;-&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="n">b</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -14323,12 +14329,15 @@ $$ \tbinom {n}{k} = \frac {n!}{k!(n-k)!} \tag{1}$$
 <div class="prompt input_prompt">In&nbsp;[24]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">get_lcs</span><span class="p">(</span><span class="n">matrix</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">get_lcs</span><span class="p">(</span><span class="n">matrix</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
     <span class="n">lc_seq</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="n">i</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
     <span class="n">j</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
     
     <span class="k">while</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="o">-</span><span class="mi">1</span> <span class="ow">and</span> <span class="n">j</span> <span class="o">&gt;</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">verbose</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">)</span>
+            
         <span class="k">if</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">j</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="n">b</span><span class="p">[</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]:</span>
             <span class="n">lc_seq</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">])</span>
             <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">-</span> <span class="mi">1</span>
@@ -14354,7 +14363,7 @@ $$ \tbinom {n}{k} = \frac {n!}{k!(n-k)!} \tag{1}$$
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># This function gets the longest common subsequence</span>
-<span class="n">get_lcs</span><span class="p">(</span><span class="n">lcs</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+<span class="n">get_lcs</span><span class="p">(</span><span class="n">dp_table</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -14427,7 +14436,7 @@ $$ \tbinom {n}{k} = \frac {n!}{k!(n-k)!} \tag{1}$$
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Function to measure the performance of an alignment</span>
-<span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">s</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="s1">&#39;-&#39;</span> <span class="ow">or</span> <span class="n">y</span> <span class="o">==</span> <span class="s1">&#39;-&#39;</span><span class="p">:</span>
         <span class="c1"># Payment for Gap</span>
         <span class="k">return</span> <span class="o">-</span><span class="mi">1</span>
@@ -14435,7 +14444,7 @@ $$ \tbinom {n}{k} = \frac {n!}{k!(n-k)!} \tag{1}$$
         <span class="c1"># Payment for Match</span>
         <span class="k">return</span> <span class="mi">1</span>
     <span class="c1"># Payment for Mismatch</span>
-    <span class="k">return</span> <span class="mi">0</span>
+    <span class="k">return</span> <span class="o">-</span><span class="mi">1</span>
 </pre></div>
 
     </div>
@@ -14455,16 +14464,16 @@ $$ \tbinom {n}{k} = \frac {n!}{k!(n-k)!} \tag{1}$$
     <span class="n">matrix</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="n">m</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)]</span>
     
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
-        <span class="n">matrix</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">i</span> <span class="o">*</span> <span class="n">f</span><span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">b</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">])</span>
+        <span class="n">matrix</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">i</span> <span class="o">*</span> <span class="n">s</span><span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">b</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">])</span>
         
     <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">m</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
-        <span class="n">matrix</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">j</span> <span class="o">*</span> <span class="n">f</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">],</span> <span class="s1">&#39;-&#39;</span><span class="p">)</span>
+        <span class="n">matrix</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">j</span> <span class="o">*</span> <span class="n">s</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">],</span> <span class="s1">&#39;-&#39;</span><span class="p">)</span>
     
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
         <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">m</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
-            <span class="n">matrix</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">matrix</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">][</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">f</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">],</span> <span class="n">b</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]),</span>
-                               <span class="n">matrix</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">+</span> <span class="n">f</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">],</span> <span class="s1">&#39;-&#39;</span><span class="p">),</span>
-                               <span class="n">matrix</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">f</span><span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">b</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]))</span>
+            <span class="n">matrix</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">matrix</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">][</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">s</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">],</span> <span class="n">b</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]),</span>
+                               <span class="n">matrix</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">+</span> <span class="n">s</span><span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">b</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]),</span>
+                               <span class="n">matrix</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">s</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">],</span> <span class="s1">&#39;-&#39;</span><span class="p">))</span>
     
     <span class="k">return</span> <span class="n">matrix</span>
 </pre></div>
@@ -14480,12 +14489,12 @@ $$ \tbinom {n}{k} = \frac {n!}{k!(n-k)!} \tag{1}$$
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Example values</span>
-<span class="n">a</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="s1">&#39;GCATGCU&#39;</span><span class="p">)</span>
+<span class="n">a</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="s1">&#39;GCATGCUA&#39;</span><span class="p">)</span>
 <span class="n">b</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="s1">&#39;GATTACA&#39;</span><span class="p">)</span>
 
 <span class="c1"># Run algorithm</span>
-<span class="n">seq_a</span> <span class="o">=</span> <span class="n">calc_seq_align</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
-<span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">seq_a</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;-&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="n">b</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;-&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="n">a</span><span class="p">)</span>
+<span class="n">dp_table</span> <span class="o">=</span> <span class="n">calc_seq_align</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">dp_table</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;-&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="n">b</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;-&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="n">a</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -14529,6 +14538,7 @@ $$ \tbinom {n}{k} = \frac {n!}{k!(n-k)!} \tag{1}$$
       <th>G</th>
       <th>C</th>
       <th>U</th>
+      <th>A</th>
     </tr>
   </thead>
   <tbody>
@@ -14542,6 +14552,7 @@ $$ \tbinom {n}{k} = \frac {n!}{k!(n-k)!} \tag{1}$$
       <td>-5</td>
       <td>-6</td>
       <td>-7</td>
+      <td>-8</td>
     </tr>
     <tr>
       <th>G</th>
@@ -14553,61 +14564,67 @@ $$ \tbinom {n}{k} = \frac {n!}{k!(n-k)!} \tag{1}$$
       <td>-3</td>
       <td>-4</td>
       <td>-5</td>
+      <td>-6</td>
     </tr>
     <tr>
       <th>A</th>
       <td>-2</td>
       <td>0</td>
-      <td>1</td>
+      <td>0</td>
       <td>1</td>
       <td>0</td>
       <td>-1</td>
       <td>-2</td>
       <td>-3</td>
+      <td>-4</td>
     </tr>
     <tr>
       <th>T</th>
       <td>-3</td>
       <td>-1</td>
+      <td>-1</td>
       <td>0</td>
-      <td>1</td>
       <td>2</td>
       <td>1</td>
       <td>0</td>
       <td>-1</td>
+      <td>-2</td>
     </tr>
     <tr>
       <th>T</th>
       <td>-4</td>
       <td>-2</td>
+      <td>-2</td>
       <td>-1</td>
-      <td>0</td>
-      <td>2</td>
-      <td>2</td>
+      <td>1</td>
       <td>1</td>
       <td>0</td>
+      <td>-1</td>
+      <td>-2</td>
     </tr>
     <tr>
       <th>A</th>
       <td>-5</td>
       <td>-3</td>
-      <td>-2</td>
+      <td>-3</td>
+      <td>-1</td>
       <td>0</td>
-      <td>1</td>
-      <td>2</td>
-      <td>2</td>
-      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>-1</td>
+      <td>0</td>
     </tr>
     <tr>
       <th>C</th>
       <td>-6</td>
       <td>-4</td>
       <td>-2</td>
+      <td>-2</td>
       <td>-1</td>
-      <td>0</td>
+      <td>-1</td>
       <td>1</td>
-      <td>3</td>
-      <td>2</td>
+      <td>0</td>
+      <td>-1</td>
     </tr>
     <tr>
       <th>A</th>
@@ -14615,10 +14632,11 @@ $$ \tbinom {n}{k} = \frac {n!}{k!(n-k)!} \tag{1}$$
       <td>-5</td>
       <td>-3</td>
       <td>-1</td>
-      <td>-1</td>
+      <td>-2</td>
+      <td>-2</td>
       <td>0</td>
-      <td>2</td>
-      <td>3</td>
+      <td>0</td>
+      <td>1</td>
     </tr>
   </tbody>
 </table>
@@ -14635,6 +14653,95 @@ $$ \tbinom {n}{k} = \frac {n!}{k!(n-k)!} \tag{1}$$
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>With computational complexity of $ \Theta(nm) $ and a space complexity of $ \Theta((n + 1)(m + 1)) $.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Calculate-the-Sequence-Alignment-result">Calculate the Sequence Alignment result<a class="anchor-link" href="#Calculate-the-Sequence-Alignment-result">&#182;</a></h4><p>Greedy approach</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[29]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">get_seq_align</span><span class="p">(</span><span class="n">matrix</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="n">alignmentA</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+    <span class="n">alignmentB</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+    <span class="n">j</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+    
+    <span class="k">while</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="o">-</span><span class="mi">1</span> <span class="ow">and</span> <span class="n">j</span> <span class="o">&gt;</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">verbose</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">)</span>
+            
+        <span class="k">if</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">j</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">matrix</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">==</span> <span class="n">matrix</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">][</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">s</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">],</span> <span class="n">b</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]):</span>
+            <span class="n">alignmentA</span> <span class="o">=</span> <span class="n">a</span><span class="p">[</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">alignmentA</span>
+            <span class="n">alignmentB</span> <span class="o">=</span> <span class="n">b</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">alignmentB</span>
+            <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">-</span> <span class="mi">1</span>
+            <span class="n">j</span> <span class="o">=</span> <span class="n">j</span> <span class="o">-</span> <span class="mi">1</span>
+        <span class="k">elif</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">matrix</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">==</span> <span class="n">matrix</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">+</span> <span class="n">s</span><span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">b</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]):</span>
+            <span class="n">alignmentA</span> <span class="o">=</span> <span class="s2">&quot;-&quot;</span> <span class="o">+</span> <span class="n">alignmentA</span>
+            <span class="n">alignmentB</span> <span class="o">=</span> <span class="n">b</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">alignmentB</span>
+            <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">-</span> <span class="mi">1</span>
+        <span class="k">elif</span> <span class="n">j</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">matrix</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">==</span> <span class="n">matrix</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">s</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">],</span> <span class="s1">&#39;-&#39;</span><span class="p">):</span>
+            <span class="n">alignmentA</span> <span class="o">=</span> <span class="n">a</span><span class="p">[</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">alignmentA</span>
+            <span class="n">alignmentB</span> <span class="o">=</span> <span class="s2">&quot;-&quot;</span> <span class="o">+</span> <span class="n">alignmentB</span>
+            <span class="n">j</span> <span class="o">=</span> <span class="n">j</span> <span class="o">-</span> <span class="mi">1</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">break</span>
+    
+    <span class="k">return</span> <span class="p">(</span><span class="n">alignmentA</span><span class="p">,</span> <span class="n">alignmentB</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[30]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># This function gets the Sequence Alignment</span>
+<span class="n">get_seq_align</span><span class="p">(</span><span class="n">dp_table</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[30]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>(&#39;GCA-TGCUA&#39;, &#39;G-ATTAC-A&#39;)</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>With computational complexity of $ \Theta(n + m) $ and a space complexity of $ \Theta((n + 1)(m + 1)) $.</p>
 
 </div>
 </div>
