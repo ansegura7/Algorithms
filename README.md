@@ -11,6 +11,7 @@ In mathematics and computer science, an algorithm is a finite sequence of well-d
 	<li>Fibonacci Serie</li>
 	<li>Integer Factorization</li>
 	<li>Tower of Hanoi</li>
+	<li>Sorting Algorithm</li>
 	<li>Changing Distribution</li>
 </ul>
 </details>
@@ -18,8 +19,8 @@ In mathematics and computer science, an algorithm is a finite sequence of well-d
 <summary>2. <a href="https://ansegura7.github.io/Algorithms/divide-and-conquer/DivideAndConquer.html" target="_blank" >Divide and Conquer</a></summary>
 <ul>
 	<li>Binary Search</li>
-	<li>Merge Sort</li>
 	<li>Quick Sort</li>
+	<li>Merge Sort</li>
 </ul>
 </details>
 <details open>
