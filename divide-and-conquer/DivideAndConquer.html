@@ -13147,7 +13147,23 @@ div#notebook {
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Main libraries</span>
 <span class="kn">import</span> <span class="nn">math</span>
 <span class="kn">import</span> <span class="nn">random</span>
+<span class="kn">import</span> <span class="nn">copy</span> 
+<span class="kn">import</span> <span class="nn">timeit</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">from</span> <span class="nn">datetime</span> <span class="k">import</span> <span class="n">datetime</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 </pre></div>
 
     </div>
@@ -13172,7 +13188,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Recursive sub-algorithm</span>
@@ -13196,7 +13212,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Binary search algorithm</span>
@@ -13216,7 +13232,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Test values</span>
@@ -13268,7 +13284,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Creating a random value (uniform)</span>
@@ -13287,7 +13303,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Validation</span>
@@ -13314,7 +13330,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[6]:</div>
+    <div class="prompt output_prompt">Out[7]:</div>
 
 
 
@@ -13340,128 +13356,14 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="2.2.-Merge-Sort">2.2. Merge Sort<a class="anchor-link" href="#2.2.-Merge-Sort">&#182;</a></h2>
+<h2 id="2.2.-Quick-Sort">2.2. Quick Sort<a class="anchor-link" href="#2.2.-Quick-Sort">&#182;</a></h2>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>In computer science, <strong>merge sort</strong> (also commonly spelled mergesort) is an efficient, general-purpose, comparison-based sorting algorithm. Most implementations produce a stable sort, which means that the order of equal elements is the same in the input and output. Merge sort is a divide and conquer algorithm that was invented by John von Neumann in 1945 <a href="#link_three">[3]</a>.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Efficiente merge function</span>
-<span class="k">def</span> <span class="nf">merge</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">):</span>
-    <span class="n">t</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="n">i</span><span class="p">,</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span>
-    <span class="n">m</span><span class="p">,</span> <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">u</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
-    <span class="n">u</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">inf</span><span class="p">)</span>
-    <span class="n">v</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">inf</span><span class="p">)</span>
-    
-    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">m</span> <span class="o">+</span> <span class="n">n</span><span class="p">):</span>
-        <span class="k">if</span> <span class="n">u</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">v</span><span class="p">[</span><span class="n">j</span><span class="p">]:</span>
-            <span class="n">t</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">u</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
-            <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="n">t</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">v</span><span class="p">[</span><span class="n">j</span><span class="p">])</span>
-            <span class="n">j</span> <span class="o">+=</span> <span class="mi">1</span>
-    
-    <span class="k">return</span> <span class="n">t</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[8]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Merge-sort recursive algorithm</span>
-<span class="k">def</span> <span class="nf">merge_sort</span><span class="p">(</span><span class="n">l</span><span class="p">):</span>
-    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
-    
-    <span class="k">if</span> <span class="n">n</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
-        <span class="n">u</span> <span class="o">=</span> <span class="n">l</span><span class="p">[</span><span class="mi">0</span> <span class="p">:</span> <span class="n">n</span><span class="o">//</span><span class="mi">2</span><span class="p">]</span>
-        <span class="n">v</span> <span class="o">=</span> <span class="n">l</span><span class="p">[</span><span class="n">n</span><span class="o">//</span><span class="mi">2</span> <span class="p">:</span> <span class="n">n</span><span class="p">]</span>
-        
-        <span class="n">u</span> <span class="o">=</span> <span class="n">merge_sort</span><span class="p">(</span><span class="n">u</span><span class="p">)</span>
-        <span class="n">v</span> <span class="o">=</span> <span class="n">merge_sort</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">merge</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span>
-    
-    <span class="k">return</span> <span class="n">l</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[9]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Test values</span>
-<span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
-
-<span class="c1"># Run algorithm</span>
-<span class="n">merge_sort</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[9]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>[0, 1, 1, 2, 3, 3, 4, 5, 5, 5, 6, 8, 9, 9]</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>With computational complexity of $ \Theta(n \log_{}{n}) $.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="2.3.-Quick-Sort">2.3. Quick Sort<a class="anchor-link" href="#2.3.-Quick-Sort">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Quicksort</strong> (sometimes called partition-exchange sort) is an efficient sorting algorithm. Developed by British computer scientist Tony Hoare in 1959 and published in 1961, it is still a commonly used algorithm for sorting <a href="#link_four">[4]</a>.</p>
+<p><strong>Quicksort</strong> (sometimes called partition-exchange sort) is an efficient sorting algorithm. Developed by British computer scientist Tony Hoare in 1959 and published in 1961, it is still a commonly used algorithm for sorting <a href="#link_three">[3]</a>.</p>
 <p>Quicksort is a divide-and-conquer algorithm. It works by selecting a 'pivot' element from the array and partitioning the other elements into two sub-arrays, according to whether they are less than or greater than the pivot. The sub-arrays are then sorted recursively. This can be done in-place, requiring small additional amounts of memory to perform the sorting.</p>
 
 </div>
@@ -13469,7 +13371,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">partition</span><span class="p">(</span><span class="n">array</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">):</span>
@@ -13502,7 +13404,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Quicksort recursive algorithm</span>
@@ -13527,7 +13429,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Test values</span>
@@ -13547,7 +13449,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[12]:</div>
+    <div class="prompt output_prompt">Out[10]:</div>
 
 
 
@@ -13573,6 +13475,238 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="2.3.-Merge-Sort">2.3. Merge Sort<a class="anchor-link" href="#2.3.-Merge-Sort">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In computer science, <strong>merge sort</strong> (also commonly spelled mergesort) is an efficient, general-purpose, comparison-based sorting algorithm. Most implementations produce a stable sort, which means that the order of equal elements is the same in the input and output. Merge sort is a divide and conquer algorithm that was invented by John von Neumann in 1945 <a href="#link_four">[4]</a>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Efficiente merge function</span>
+<span class="k">def</span> <span class="nf">merge</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">):</span>
+    <span class="n">t</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">i</span><span class="p">,</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span>
+    <span class="n">m</span><span class="p">,</span> <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">u</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+    <span class="n">u</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">inf</span><span class="p">)</span>
+    <span class="n">v</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">inf</span><span class="p">)</span>
+    
+    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">m</span> <span class="o">+</span> <span class="n">n</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">u</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">v</span><span class="p">[</span><span class="n">j</span><span class="p">]:</span>
+            <span class="n">t</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">u</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+            <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">t</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">v</span><span class="p">[</span><span class="n">j</span><span class="p">])</span>
+            <span class="n">j</span> <span class="o">+=</span> <span class="mi">1</span>
+    
+    <span class="k">return</span> <span class="n">t</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Merge-sort recursive algorithm</span>
+<span class="k">def</span> <span class="nf">merge_sort</span><span class="p">(</span><span class="n">l</span><span class="p">):</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
+    
+    <span class="k">if</span> <span class="n">n</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">u</span> <span class="o">=</span> <span class="n">l</span><span class="p">[</span><span class="mi">0</span> <span class="p">:</span> <span class="n">n</span><span class="o">//</span><span class="mi">2</span><span class="p">]</span>
+        <span class="n">v</span> <span class="o">=</span> <span class="n">l</span><span class="p">[</span><span class="n">n</span><span class="o">//</span><span class="mi">2</span> <span class="p">:</span> <span class="n">n</span><span class="p">]</span>
+        
+        <span class="n">u</span> <span class="o">=</span> <span class="n">merge_sort</span><span class="p">(</span><span class="n">u</span><span class="p">)</span>
+        <span class="n">v</span> <span class="o">=</span> <span class="n">merge_sort</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">merge</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">l</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Test values</span>
+<span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+
+<span class="c1"># Run algorithm</span>
+<span class="n">merge_sort</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[13]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>[0, 1, 1, 2, 3, 3, 4, 5, 5, 5, 6, 8, 9, 9]</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>With computational complexity of $ \Theta(n \log_{}{n}) $.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Experiment:-compare-sorting-algorithms">Experiment: compare sorting algorithms<a class="anchor-link" href="#Experiment:-compare-sorting-algorithms">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Experiment variables</span>
+<span class="n">n_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1000</span><span class="p">,</span> <span class="mi">2000</span><span class="p">,</span> <span class="mi">5000</span><span class="p">,</span> <span class="mi">10000</span><span class="p">,</span> <span class="mi">20000</span><span class="p">,</span> <span class="mi">50000</span><span class="p">,</span> <span class="mi">100000</span><span class="p">,</span> <span class="mi">200000</span><span class="p">]</span>
+<span class="n">n_max</span> <span class="o">=</span> <span class="n">n_list</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">n_list</span><span class="p">)</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Creating a random value (uniform)</span>
+<span class="n">ms</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">microsecond</span> <span class="o">/</span> <span class="mi">1000</span>
+<span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="n">ms</span><span class="p">)</span>
+
+<span class="n">numbers</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_max</span><span class="p">):</span>
+    <span class="n">numbers</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="o">*</span> <span class="mi">1000</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a_time</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">b_time</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">c_time</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="n">n_list</span><span class="p">:</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="n">copy</span><span class="o">.</span><span class="n">deepcopy</span><span class="p">(</span><span class="n">numbers</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">l</span><span class="p">])</span>
+    <span class="n">b</span> <span class="o">=</span> <span class="n">copy</span><span class="o">.</span><span class="n">deepcopy</span><span class="p">(</span><span class="n">numbers</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">l</span><span class="p">])</span>
+    <span class="n">c</span> <span class="o">=</span> <span class="n">copy</span><span class="o">.</span><span class="n">deepcopy</span><span class="p">(</span><span class="n">numbers</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">l</span><span class="p">])</span>
+    
+    <span class="n">start_time</span> <span class="o">=</span> <span class="n">timeit</span><span class="o">.</span><span class="n">default_timer</span><span class="p">()</span>
+    <span class="n">quick_sort</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+    <span class="n">a_time</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">timeit</span><span class="o">.</span><span class="n">default_timer</span><span class="p">()</span> <span class="o">-</span> <span class="n">start_time</span><span class="p">)</span> <span class="o">*</span> <span class="mi">1000</span><span class="p">)</span>
+    
+    <span class="n">start_time</span> <span class="o">=</span> <span class="n">timeit</span><span class="o">.</span><span class="n">default_timer</span><span class="p">()</span>
+    <span class="n">merge_sort</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+    <span class="n">b_time</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">timeit</span><span class="o">.</span><span class="n">default_timer</span><span class="p">()</span> <span class="o">-</span> <span class="n">start_time</span><span class="p">)</span> <span class="o">*</span> <span class="mi">1000</span><span class="p">)</span>
+    
+    <span class="n">start_time</span> <span class="o">=</span> <span class="n">timeit</span><span class="o">.</span><span class="n">default_timer</span><span class="p">()</span>
+    <span class="n">c</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+    <span class="n">c_time</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">timeit</span><span class="o">.</span><span class="n">default_timer</span><span class="p">()</span> <span class="o">-</span> <span class="n">start_time</span><span class="p">)</span> <span class="o">*</span> <span class="mi">1000</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[17]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Plotting results</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">a_time</span><span class="p">,</span> <span class="n">linewidth</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s2">&quot;o&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">b_time</span><span class="p">,</span> <span class="n">linewidth</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s2">&quot;o&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">c_time</span><span class="p">,</span> <span class="n">linewidth</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s2">&quot;o&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">n_list</span><span class="p">)),</span> <span class="n">n_list</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Compare Sorting Algorithms&quot;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">14</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Time (ms)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;n&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">((</span><span class="s2">&quot;Quicksort&quot;</span><span class="p">,</span> <span class="s2">&quot;Mergesort&quot;</span><span class="p">,</span> <span class="s2">&quot;Python Default&quot;</span><span class="p">),</span> <span class="n">loc</span> <span class="o">=</span> <span class="s2">&quot;best&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+
+<div class="output_png output_subarea ">
+<img src="data:image/png;base64,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mTOPnqNnz55ERUWd9v2JiIgUBjUqlMpVeX4qsj1udQZ+mes2m/Yk59hu3UvX5di+cePGjBs37piyffv2sXXrVipXrsyvv/56tDy7R2CcLPEDuPjii1mwYAG7du2iUqVKFC9enHnz5vHdd98xatQo3nrrLaZOnXpCu6znK126dI7xi4iIFAWPd27A42N/JjX9946VUtFRPN65QYBReYps4pZTknXpS1PZlE13aM0KpZg18MrTvmbHjh0ZOHAgI0aM4O677yY9PZ2//OUvDBgwgLp16/LOO++QkZHBpk2bmDdvXrbte/TowaOPPkrlypWPJmkAXbp0oXPnzlx33XV88803mBmHDh3i2muvpU2bNlxwwQUAtG3bllGjRnHXXXfx8ccf065du2xjLVu2LPv27TvtexUREYlUXWOrM2jSMqKjirHjwGFqVCjF450bnNF0qbxSZBO3nDzeucExc9wgbzJtM+Ozzz7joYce4oUXXmD79u3ceuutPP300zjnqFu3Lk2bNqVJkya0aNHihPaNGzfm6aef5vLLLycqKormzZszbNiwo8d79uzJ/v37ueGGG/jkk0/o1q0bKSkpOOd47bXXAHjjjTfo06cPL7/8MlWrVuXDD7NfpHv99ddz8803M3HiRN58803at29/RvcuIiISKSYv/Y0LzynLmAcuCTqUE1io86siSXx8vEtISDimbMWKFTRs2DDkc0xYuImXv17J5j3JYcu0Z8+eze2338748eNPWLQgv8vtz05EROR0Oee4/q2ZPNLxQq5udE6+XNPMFjjn4kOpqx63k+jevGbYu0Tbtm3L+vXrw3oNERERCd2cxJ0cOpJOx4vODjqUbGlVqYiIiIhvyPRE7mtfj2LFCuaWi0rcRERERIBft+5nyaZ99CgAixBORombiIiICPD+jETuvuQ8YqIL7jNNlbiJiIhIkbdtXwr/Xfobd7Y5L+hQcqTETURERIq84XPW0S2uJpVKlwg6lBwpcctHZnbMxvBpaWlUrVqVrl27BhjVqS1atIjJkycHHYaIiEhYHDycxidzN9C3Xd2gQzklJW75qHTp0ixdupTkZG9XhilTplCzZu4mQIayGX1eSktLU+ImIiKF2qcJG2ldtzJ1qhT8rR+VuJ3M4jHwWhMYVMH7unhMnpz2mmuu4csvvf1OR44cye2333702MGDB+nTpw8XX3wx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
+"
+>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Reference">Reference<a class="anchor-link" href="#Reference">&#182;</a></h2>
 </div>
 </div>
@@ -13582,8 +13716,8 @@ div#notebook {
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><a name='link_one' href='https://en.wikipedia.org/wiki/Divide-and-conquer_algorithm' target='_blank' >[1]</a> Wikipedia - Divide-and-Conquer algorithm.<br>
 <a name='link_two' href='https://en.wikipedia.org/wiki/Binary_search_algorithm' target='_blank' >[2]</a> Wikipedia - Binary search.<br>
-<a name='link_three' href='https://en.wikipedia.org/wiki/Merge_sort' target='_blank' >[3]</a> Wikipedia - Merge sort.<br>
-<a name='link_four' href='https://en.wikipedia.org/wiki/Quicksort' target='_blank' >[3]</a> Wikipedia - Quicksort.</p>
+<a name='link_three' href='https://en.wikipedia.org/wiki/Quicksort' target='_blank' >[3]</a> Wikipedia - Quicksort.<br>
+<a name='link_four' href='https://en.wikipedia.org/wiki/Merge_sort' target='_blank' >[4]</a> Wikipedia - Merge sort.</p>
 
 </div>
 </div>
