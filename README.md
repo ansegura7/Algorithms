@@ -90,7 +90,12 @@ In mathematics and computer science, an algorithm is a finite sequence of well-d
 ## Contributing and Feedback
 Any kind of feedback/criticism would be greatly appreciated (algorithm design, documentation, improvement ideas, spelling mistakes, etc...).
 
-## Authors
+## Bibliography
+- G. Brassard, P. Bratley. (2006). Fundamentals of Algorithmics. Englewood Cliffs, New Jersey: Prentice-Hall, Inc.
+- R.C.T. Lee, S.S. Tseng, R.C. Chang, Y.T.Tsai. (2005). Introduction to the Design and Analysis of Algorithms. A Strategic Approach. Asia: McGraw-Hill Education.
+- K. Rosen. (2012). Discrete Mathematics and Its Applications. NewYork, NY: McGraw-Hill Education; Edición: 7th.
+
+## Author
 - Created by Andrés Segura Tinoco
 - Created on May 17, 2019
 
