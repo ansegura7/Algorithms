@@ -1,7 +1,9 @@
 # Algorithms - Python
 Repository with the implementation (in Python) and description of several computational, mathematical and statistical algorithms.
 
-## Algorithms
+Although it is not intended to have the formal rigor of a book, it was tried to be as faithful as possible to the original algorithms, only by adding variants, when these were necessary for didactic purposes.
+
+## Algorithm
 In mathematics and computer science, an algorithm is a finite sequence of well-defined, computer-implementable instructions, typically to solve a class of problems or to perform a computation.
 
 <details open>
@@ -87,13 +89,13 @@ In mathematics and computer science, an algorithm is a finite sequence of well-d
   conda install -c anaconda networkx
 ```
 
-## Contributing and Feedback
-Any kind of feedback/criticism would be greatly appreciated (algorithm design, documentation, improvement ideas, spelling mistakes, etc...).
-
 ## Bibliography
 - G. Brassard, P. Bratley. (2006). *Fundamentals of Algorithmics*. Englewood Cliffs, New Jersey: Prentice-Hall, Inc.
 - R.C.T. Lee, S.S. Tseng, R.C. Chang, Y.T.Tsai. (2005). *Introduction to the Design and Analysis of Algorithms. A Strategic Approach*. Asia: McGraw-Hill Education.
 - K. Rosen. (2012). *Discrete Mathematics and Its Applications*. NewYork, NY: McGraw-Hill Education; Edición: 7th.
+
+## Contributing and Feedback
+Any kind of feedback/criticism would be greatly appreciated (algorithm design, documentation, improvement ideas, spelling mistakes, etc...).
 
 ## Author
 - Created by Andrés Segura Tinoco
