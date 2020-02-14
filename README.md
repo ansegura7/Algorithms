@@ -23,6 +23,7 @@ In mathematics and computer science, an algorithm is a finite sequence of well-d
 	<li>Binary Search</li>
 	<li>Quick Sort</li>
 	<li>Merge Sort</li>
+	<li>Convex Hull</li>
 </ul>
 </details>
 <details open>
