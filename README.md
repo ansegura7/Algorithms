@@ -14,6 +14,7 @@ In mathematics and computer science, an algorithm is a finite sequence of well-d
 	<li>Integer Factorization</li>
 	<li>Tower of Hanoi</li>
 	<li>Sorting Algorithm</li>
+	<li>Convex Hull - Greedy</li>
 	<li>Changing Distribution</li>
 </ul>
 </details>
@@ -23,7 +24,7 @@ In mathematics and computer science, an algorithm is a finite sequence of well-d
 	<li>Binary Search</li>
 	<li>Quick Sort</li>
 	<li>Merge Sort</li>
-	<li>Convex Hull</li>
+	<li>Convex Hull - Recursive</li>
 </ul>
 </details>
 <details open>
