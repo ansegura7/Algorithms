@@ -1,4 +1,9 @@
 # Algorithms - Python
+![version](https://img.shields.io/badge/Version-Pro-blue)
+![release](https://img.shields.io/badge/Release-1.0.0-blue)
+![language](https://img.shields.io/badge/Language-Python-brightgreen)
+![last-update](https://img.shields.io/badge/Last_update-02/20/2020-orange)
+
 Repository with the implementation (in Python) and description of several computational, mathematical and statistical algorithms.
 
 Although it is not intended to have the formal rigor of a book, it was tried to be as faithful as possible to the original algorithms, only by adding variants, when these were necessary for didactic purposes.
