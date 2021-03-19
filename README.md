@@ -1,8 +1,8 @@
 # Algorithms - Python
 ![version](https://img.shields.io/badge/Version-Pro-blue)
-![release](https://img.shields.io/badge/Release-1.0.0-blue)
+![release](https://img.shields.io/badge/Release-1.1.0-blue)
 ![language](https://img.shields.io/badge/Language-Python-brightgreen)
-![last-update](https://img.shields.io/badge/Last_update-03/23/2020-orange)
+![last-update](https://img.shields.io/badge/Last_update-03/19/2021-orange)
 
 Repository with the implementation (in Python) and description of several computational, mathematical and statistical algorithms.
 
@@ -108,6 +108,7 @@ Any kind of feedback/criticism would be greatly appreciated (algorithm design, d
 ## Author
 - Created by Andrés Segura Tinoco
 - Created on May 17, 2019
+- Updated on Mar 19, 2021
 
 ## License
 This project is licensed under the terms of the MIT license.
