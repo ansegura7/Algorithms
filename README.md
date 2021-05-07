@@ -1,12 +1,13 @@
 # Algorithms - Python
-![version](https://img.shields.io/badge/Version-Pro-blue)
-![release](https://img.shields.io/badge/Release-1.1.0-blue)
-![language](https://img.shields.io/badge/Language-Python-brightgreen)
-![last-update](https://img.shields.io/badge/Last_update-03/19/2021-orange)
+![version](https://img.shields.io/badge/version-Pro-blue)
+![release](https://img.shields.io/badge/release-1.1.0-blue)
+![language](https://img.shields.io/badge/language-Python_3.7%7C3.8-brightgreen)
+![last-update](https://img.shields.io/badge/last_update-05/07/2021-orange)
+![last-update](https://img.shields.io/badge/license-MIT-orange)
 
-Repository with the implementation (in Python) and description of several computational, mathematical and statistical algorithms.
+Repository course with the implementation (in Python) and description of several computational, mathematical and statistical algorithms.
 
-Although it is not intended to have the formal rigor of a book, it was tried to be as faithful as possible to the original algorithms, only by adding variants, when these were necessary for didactic purposes.
+Although it is not intended to have the formal rigor of a book, we tried to be as faithful as possible to the original algorithms, only adding variants, when these were necessary for didactic purposes.
 
 ## What is an algorithm?
 In mathematics and computer science, an algorithm is a finite sequence of well-defined, computer-implementable instructions, typically to solve a class of problems or to perform a computation.
@@ -108,7 +109,7 @@ Any kind of feedback/criticism would be greatly appreciated (algorithm design, d
 ## Author
 - Created by Andrés Segura Tinoco
 - Created on May 17, 2019
-- Updated on Mar 19, 2021
+- Updated on May 07, 2021
 
 ## License
 This project is licensed under the terms of the MIT license.
