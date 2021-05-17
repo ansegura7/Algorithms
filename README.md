@@ -1,18 +1,18 @@
-# Algorithms - Python
+# Algorithms Course - Python
 ![version](https://img.shields.io/badge/version-Pro-blue)
 ![release](https://img.shields.io/badge/release-1.1.0-blue)
 ![language](https://img.shields.io/badge/language-Python_3.7%7C3.8-brightgreen)
-![last-update](https://img.shields.io/badge/last_update-05/07/2021-orange)
+![last-update](https://img.shields.io/badge/last_update-05/17/2021-orange)
 ![last-update](https://img.shields.io/badge/license-MIT-orange)
 
 Repository course with the implementation (in Python) and description of several computational, mathematical and statistical algorithms.
 
-Although it is not intended to have the formal rigor of a book, we tried to be as faithful as possible to the original algorithms, only adding variants, when these were necessary for didactic purposes.
+Although it is not intended to have the formal rigor of a book, we tried to be as faithful as possible to the original algorithms and methods, only adding variants, when these were necessary for didactic purposes.
 
 ## What is an algorithm?
 In mathematics and computer science, an algorithm is a finite sequence of well-defined, computer-implementable instructions, typically to solve a class of problems or to perform a computation.
 
-## Algorithm List
+## Content
 <details open>
 <summary>1. <a href="https://ansegura7.github.io/Algorithms/basics/AlgorithmsBasics.html" >Algorithm's Basics</a></summary>
 <ul>
@@ -109,7 +109,7 @@ Any kind of feedback/criticism would be greatly appreciated (algorithm design, d
 ## Author
 - Created by Andrés Segura Tinoco
 - Created on May 17, 2019
-- Updated on May 07, 2021
+- Updated on May 17, 2021
 
 ## License
 This project is licensed under the terms of the MIT license.
