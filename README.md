@@ -1,11 +1,11 @@
-# Algorithms Course - Python
+# Python Algorithms Course
 ![version](https://img.shields.io/badge/version-Pro-blue)
-![release](https://img.shields.io/badge/release-1.1.0-blue)
+![release](https://img.shields.io/badge/release-1.2.0-blue)
 ![language](https://img.shields.io/badge/language-Python_3.7%7C3.8-brightgreen)
-![last-update](https://img.shields.io/badge/last_update-05/17/2021-orange)
+![last-update](https://img.shields.io/badge/last_update-05/18/2021-orange)
 ![last-update](https://img.shields.io/badge/license-MIT-orange)
 
-Repository course with the implementation (in Python) and description of several computational, mathematical and statistical algorithms.
+Free hands-on course with the implementation (in Python) and description of several computational, mathematical and statistical algorithms.
 
 Although it is not intended to have the formal rigor of a book, we tried to be as faithful as possible to the original algorithms and methods, only adding variants, when these were necessary for didactic purposes.
 
@@ -104,12 +104,12 @@ In mathematics and computer science, an algorithm is a finite sequence of well-d
 - K. Rosen. (2012). *Discrete Mathematics and Its Applications*. NewYork, NY: McGraw-Hill Education; Edición: 7th.
 
 ## Contributing and Feedback
-Any kind of feedback/criticism would be greatly appreciated (algorithm design, documentation, improvement ideas, spelling mistakes, etc...).
+Any kind of feedback/suggestions would be greatly appreciated (algorithm design, documentation, improvement ideas, spelling mistakes, etc...). If you want to make a contribution to the course you can do it through a PR.
 
 ## Author
-- Created by Andrés Segura Tinoco
+- Created by Andrés Segura-Tinoco
 - Created on May 17, 2019
-- Updated on May 17, 2021
+- Updated on May 18, 2021
 
 ## License
 This project is licensed under the terms of the MIT license.
