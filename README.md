@@ -1,8 +1,8 @@
 # Python Algorithms Course
 ![version](https://img.shields.io/badge/version-Pro-blue)
-![release](https://img.shields.io/badge/release-1.2.2-blue)
+![release](https://img.shields.io/badge/release-1.2.3-blue)
 ![language](https://img.shields.io/badge/language-Python_3.7%7C3.8-brightgreen)
-![last-update](https://img.shields.io/badge/last_update-06/26/2021-orange)
+![last-update](https://img.shields.io/badge/last_update-07/11/2021-orange)
 ![last-update](https://img.shields.io/badge/license-MIT-orange)
 
 Free hands-on course with the implementation (in Python) and description of several computational, mathematical and statistical algorithms.
@@ -10,6 +10,8 @@ Free hands-on course with the implementation (in Python) and description of seve
 Although it is not intended to have the formal rigor of a book, we tried to be as faithful as possible to the original algorithms and methods, only adding variants, when these were necessary for didactic purposes.
 
 ## Quick Start
+The best way to get the most out of this course is to carefully read each selected problem, try to think of a possible solution (language independent) and then look at the proposed Python code and try to reproduce it in your favorite IDE. If you already have knowledge of the Python language, then you can go directly to programming your solution and then compare it with the one proposed in the course.
+
 If you want to play with these notebooks online without having to install any library or configure hardware, you can use the following service:
 - <a href="https://colab.research.google.com/github/ansegura7/Algorithms/blob/master/" target="_blank"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
 
@@ -113,7 +115,7 @@ Any kind of feedback/suggestions would be greatly appreciated (algorithm design,
 ## Author
 - Created by Andrés Segura-Tinoco
 - Created on May 17, 2019
-- Updated on Jun 26, 2021
+- Updated on Jul 11, 2021
 
 ## License
 This project is licensed under the terms of the MIT license.
