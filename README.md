@@ -2,7 +2,7 @@
 ![version](https://img.shields.io/badge/version-Pro-blue)
 ![release](https://img.shields.io/badge/release-1.2.3-blue)
 ![language](https://img.shields.io/badge/language-Python_3.7%7C3.8-brightgreen)
-![last-update](https://img.shields.io/badge/last_update-07/11/2021-orange)
+![last-update](https://img.shields.io/badge/last_update-08/11/2021-orange)
 ![last-update](https://img.shields.io/badge/license-MIT-orange)
 
 Free hands-on course with the implementation (in Python) and description of several computational, mathematical and statistical algorithms.
@@ -18,7 +18,7 @@ If you want to play with these notebooks online without having to install any li
 ## What is an algorithm?
 In mathematics and computer science, an algorithm is a finite sequence of well-defined, computer-implementable instructions, typically to solve a class of problems or to perform a computation.
 
-## Content
+## Contents
 <details open>
 <summary>1. <a href="https://ansegura7.github.io/Algorithms/basics/AlgorithmsBasics.html" >Algorithm's Basics</a></summary>
 <ul>
@@ -115,7 +115,6 @@ Any kind of feedback/suggestions would be greatly appreciated (algorithm design,
 ## Author
 - Created by Andrés Segura-Tinoco
 - Created on May 17, 2019
-- Updated on Jul 11, 2021
 
 ## License
-This project is licensed under the terms of the MIT license.
+This project is licensed under the terms of the <a href="https://github.com/ansegura7/Algorithms/blob/master/LICENSE">MIT license</a>.
