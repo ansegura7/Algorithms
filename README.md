@@ -2,7 +2,7 @@
 ![version](https://img.shields.io/badge/version-Pro-blue)
 ![release](https://img.shields.io/badge/release-1.2.3-blue)
 ![language](https://img.shields.io/badge/language-Python_3.7%7C3.8-brightgreen)
-![last-update](https://img.shields.io/badge/last_update-08/11/2021-orange)
+![last-update](https://img.shields.io/badge/last_update-10/18/2023-orange)
 ![last-update](https://img.shields.io/badge/license-MIT-orange)
 
 Free hands-on course with the implementation (in Python) and description of several computational, mathematical and statistical algorithms.
@@ -13,7 +13,7 @@ Although it is not intended to have the formal rigor of a book, we tried to be a
 The best way to get the most out of this course is to carefully read each selected problem, try to think of a possible solution (language independent) and then look at the proposed Python code and try to reproduce it in your favorite IDE. If you already have knowledge of the Python language, then you can go directly to programming your solution and then compare it with the one proposed in the course.
 
 If you want to play with these notebooks online without having to install any library or configure hardware, you can use the following service:
-- <a href="https://colab.research.google.com/github/ansegura7/Algorithms/blob/master/" target="_blank"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
+- <a href="https://colab.research.google.com/github/ansegura7/Algorithms/blob/main/" target="_blank"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
 
 ## What is an algorithm?
 In mathematics and computer science, an algorithm is a finite sequence of well-defined, computer-implementable instructions, typically to solve a class of problems or to perform a computation.
@@ -112,9 +112,12 @@ In mathematics and computer science, an algorithm is a finite sequence of well-d
 ## Contributing and Feedback
 Any kind of feedback/suggestions would be greatly appreciated (algorithm design, documentation, improvement ideas, spelling mistakes, etc...). If you want to make a contribution to the course you can do it through a PR.
 
+## Documentation
+Please read the [contributing](https://github.com/ansegura7/Algorithms/blob/main/docs/CONTRIBUTING.md) and [code of conduct](https://github.com/ansegura7/Algorithms/blob/main/docs/CODE_OF_CONDUCT.md) documentation.
+
 ## Author
 - Created by Andrés Segura-Tinoco
 - Created on May 17, 2019
 
 ## License
-This project is licensed under the terms of the <a href="https://github.com/ansegura7/Algorithms/blob/master/LICENSE">MIT license</a>.
+This project is licensed under the terms of the <a href="https://github.com/ansegura7/Algorithms/blob/main/LICENSE">MIT license</a>.

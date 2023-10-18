@@ -1,0 +1,6 @@
+blank_issues_enabled: false
+
+contact_links:
+  - name: "\U00002753Questions"
+    url: "https://github.com/ansegura7/Algorithms/discussions"
+    about: "Use the GitHub Discussions to ask support questions."
